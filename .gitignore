@@ -1,0 +1,14 @@
+Backup Of ADC.pdsbak
+*.workspace
+*.hex
+*.map
+*.xml
+*.mk
+*.properties
+*.d
+*.o
+*.pdsbak
+*.cof
+
+WorkSpace.X/Makefile
+WorkSpace.X/Working_0.c
