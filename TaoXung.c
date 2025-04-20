@@ -22,8 +22,8 @@ void main()
 		{
 			// dat gia tri ban dau cho timer1
 			// chi lap den 2000 lan cho den khi tran
-			TRM1H = (65536 - 2000) / 256;
-			TRM1L = (65536 - 2000) % 256;
+			TMR1H = (65536 - 2000) / 256;
+			TMR1L = (65536 - 2000) % 256;
 			// lap cho den khi timer1 tran
 			while (PIR1bits.TMR1IF == 0)
 				;
