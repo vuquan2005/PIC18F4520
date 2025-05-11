@@ -49,32 +49,30 @@ Mẫu sử dụng ngắt thực tế xem [ở đây 📖](#-sử-dụng).
 
 #### [INTCON](#intcon)
 
-| Bit | Tên Bit     | Mô tả                                                           |
-| --- | ----------- | --------------------------------------------------------------- |
-| 7️⃣  | `GIE/GIEH ` | Bit cho phép ngắt toàn cục.                                     |
-|     |             | Khi IPEN = 0, cho phép tất cả ngắt không ưu tiên.               |
-|     |             | Khi IPEN = 1, cho phép tất cả ngắt ưu tiên cao.                 |
-| 6️⃣  | `PEIE/GIEL` | Bit cho phép ngắt ngoại vi.                                     |
-|     |             | Khi IPEN = 0, cho phép tất cả ngắt ngoại vi không ưu tiên.      |
-|     |             | Khi IPEN = 1, cho phép ngắt ngoại vi ưu tiên thấp.              |
-| 5️⃣  | `TMR0IE`    | Bit cho phép ngắt tràn Timer0 (TMR0).                           |
-|     |             | 1 = Cho phép                                                    |
-|     |             | 0 = Cấm.                                                        |
-| 4️⃣  | `INT0IE`    | Bit cho phép ngắt ngoài INT0.                                   |
-|     |             | 1 = Cho phép                                                    |
-|     |             | 0 = Cấm.                                                        |
-| 3️⃣  | `RBIE`      | Bit cho phép ngắt khi thay đổi mức trên PortB.                  |
-|     |             | 1 = Cho phép                                                    |
-|     |             | 0 = Cấm.                                                        |
-| 2️⃣  | `TMR0IF`    | Cờ báo ngắt tràn Timer0. _(Phải được xóa bằng phần mềm)_        |
-|     |             | 1 = Tràn                                                        |
-|     |             | 0 = Không tràn.                                                 |
-| 1️⃣  | `INT0IF`    | Cờ báo ngắt ngoài INT0. _(Phải được xóa bằng phần mềm)_         |
-|     |             | 1 = Có ngắt                                                     |
-|     |             | 0 = Không có ngắt.                                              |
-| 0️⃣  | `RBIF`      | Cờ báo thay đổi mức trên PortB. _(Phải được xóa bằng phần mềm)_ |
-|     |             | 1 = Có thay đổi                                                 |
-|     |             | 0 = Không thay đổi.                                             |
+| Bit | Tên Bit     | Mô tả                                                                          |
+| --- | ----------- | ------------------------------------------------------------------------------ |
+| 7️⃣  | `GIE/GIEH ` | Bit cho phép ngắt toàn cục.                                                    |
+|     |             | Khi IPEN = 0, cho phép tất cả ngắt không ưu tiên.                              |
+|     |             | Khi IPEN = 1, cho phép tất cả ngắt ưu tiên cao.                                |
+| 6️⃣  | `PEIE/GIEL` | Bit cho phép ngắt ngoại vi.                                                    |
+|     |             | Khi IPEN = 0, cho phép tất cả ngắt ngoại vi không ưu tiên.                     |
+|     |             | Khi IPEN = 1, cho phép ngắt ngoại vi ưu tiên thấp.                             |
+| 5️⃣  | `TMR0IE`    | Bit cho phép ngắt tràn Timer0 (TMR0).                                          |
+|     |             | 1 = Cho phép                                                                   |
+|     |             | 0 = Cấm.                                                                       |
+| 4️⃣  | `INT0IE`    | Bit cho phép ngắt ngoài INT0.                                                  |
+|     |             | 1 = Cho phép                                                                   |
+|     |             | 0 = Cấm.                                                                       |
+| 3️⃣  | `RBIE`      | Bit cho phép ngắt khi thay đổi mức trên PortB.                                 |
+|     |             | 1 = Cho phép                                                                   |
+|     |             | 0 = Cấm.                                                                       |
+| 2️⃣  | `TMR0IF`    | Cờ báo ngắt tràn [Timer0](2-Timer.md#cờ-tràn). _(Phải được xóa bằng phần mềm)_ |
+| 1️⃣  | `INT0IF`    | Cờ báo ngắt ngoài INT0. _(Phải được xóa bằng phần mềm)_                        |
+|     |             | 1 = Có ngắt                                                                    |
+|     |             | 0 = Không có ngắt.                                                             |
+| 0️⃣  | `RBIF`      | Cờ báo thay đổi mức trên PortB. _(Phải được xóa bằng phần mềm)_                |
+|     |             | 1 = Có thay đổi                                                                |
+|     |             | 0 = Không thay đổi.                                                            |
 
 #### [INTCON2](#intcon2)
 
