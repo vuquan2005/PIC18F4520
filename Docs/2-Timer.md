@@ -2,6 +2,10 @@
 
 Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
+-   [Nguồn xung](#nguồn-xung)
+-   [Chọn hệ số chia tần](#chọn-hệ-số-chia-tần)
+-   [Cờ tràn](#cờ-tràn)
+-   [Đọc ghi timer](#đọcghi-timer)
 -   [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
 
 ## ✏️ Thanh ghi
@@ -176,6 +180,3 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
     WriteTimer1(unsigned int timer_value);
 }
 ```
-
-$$
-$$
