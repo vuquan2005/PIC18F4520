@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Tue May 06 21:59:02 2025
+Linker Map File - Created Tue May 06 23:28:47 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,19 +7,19 @@ Linker Map File - Created Tue May 06 21:59:02 2025
                _entry_scn       code   0x000000    program   0x000006
               uu_tien_cao       code   0x000008    program   0x000004
                    .cinit    romdata   0x00002a    program   0x00000e
-             .code_Ngat.o       code   0x000038    program   0x0000c4
-               _cinit_scn       code   0x0000fc    program   0x00009e
-             D10KTCYXCODE       code   0x00019a    program   0x00002e
-                    .code       code   0x0001c8    program   0x000020
-             _startup_scn       code   0x0001e8    program   0x00001c
-           .code___init.o       code   0x000204    program   0x000002
-          .idata_Ngat.o_i    romdata   0x000206    program   0x000001
-          .romdata_Ngat.o    romdata   0x000206    program   0x000000
-         .romdata_c018i.o    romdata   0x000206    program   0x000000
-        .idata___init.o_i    romdata   0x000206    program   0x000000
-        .romdata___init.o    romdata   0x000206    program   0x000000
-         .idata_c018i.o_i    romdata   0x000206    program   0x000000
-            .code_c018i.o       code   0x000208    program   0x000000
+             .code_Ngat.o       code   0x000038    program   0x0000be
+               _cinit_scn       code   0x0000f6    program   0x00009e
+             D10KTCYXCODE       code   0x000194    program   0x00002e
+                    .code       code   0x0001c2    program   0x000020
+             _startup_scn       code   0x0001e2    program   0x00001c
+           .code___init.o       code   0x0001fe    program   0x000002
+          .idata_Ngat.o_i    romdata   0x000200    program   0x000001
+          .romdata_Ngat.o    romdata   0x000200    program   0x000000
+         .romdata_c018i.o    romdata   0x000200    program   0x000000
+        .idata___init.o_i    romdata   0x000200    program   0x000000
+        .romdata___init.o    romdata   0x000200    program   0x000000
+         .idata_c018i.o_i    romdata   0x000200    program   0x000000
+            .code_c018i.o       code   0x000202    program   0x000000
     .config_300001_Ngat.o    romdata   0x300001    program   0x000001
     .config_300003_Ngat.o    romdata   0x300003    program   0x000001
     .config_300005_Ngat.o    romdata   0x300005    program   0x000001
@@ -43,47 +43,47 @@ Linker Map File - Created Tue May 06 21:59:02 2025
                            ---------   ---------      
                             0x000000    0x000005      
                             0x000008    0x00000b      
-                            0x00002a    0x000206      
+                            0x00002a    0x000200      
                             0x300001    0x300001      
                             0x300003    0x300003      
                             0x300005    0x300005      
-            490 out of 33048 program addresses used, program memory utilization is 1%
+            484 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   D10K_1   0x0001a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x0001b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x0001a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-             Delay10KTCYx   0x00019a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x0001aa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x0001b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x0001a0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x0001ac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00019e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+             Delay10KTCYx   0x000194    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x0001a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x0001b0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000202    program     static                          
-       ___return_lbl00002   0x000198    program     static                          
+       ___return_lbl00001   0x0001fc    program     static                          
+       ___return_lbl00002   0x000192    program     static                          
                __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
-                   __init   0x000204    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x0001c8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x0000fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __init   0x0001fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+            __zero_memory   0x0001c2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x0000f6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x0001e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x0001de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x00016e    program     static                          
-            copy_one_byte   0x000174    program     static                          
-                     done   0x000198    program     static                          
-             done_copying   0x000182    program     static                          
-                     loop   0x0001f8    program     static                          
-                   loop_h   0x0001d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x0001e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x0001e2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x0001d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x000168    program     static                          
+            copy_one_byte   0x00016e    program     static                          
+                     done   0x000192    program     static                          
+             done_copying   0x00017c    program     static                          
+                     loop   0x0001f2    program     static                          
+                   loop_h   0x0001d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x0001da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      main   0x00006c    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                  ngat_cao   0x000008    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                ngat_ngoai   0x000038    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
-                     test   0x000116    program     static                          
-               zero_block   0x0001d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     test   0x000110    program     static                          
+               zero_block   0x0001d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -294,28 +294,28 @@ Linker Map File - Created Tue May 06 21:59:02 2025
                  ngat_cao   0x000008    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                ngat_ngoai   0x000038    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                      main   0x00006c    program     extern D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
-                _do_cinit   0x0000fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000116    program     static                          
-                copy_loop   0x00016e    program     static                          
-            copy_one_byte   0x000174    program     static                          
-             done_copying   0x000182    program     static                          
-       ___return_lbl00002   0x000198    program     static                          
-                     done   0x000198    program     static                          
-             Delay10KTCYx   0x00019a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x0001a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x0001a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x0001aa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x0001b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x0001b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-            __zero_memory   0x0001c8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x0001d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x0001d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x0001de    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x0001e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x0001e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x0001f8    program     static                          
-       ___return_lbl00001   0x000202    program     static                          
-                   __init   0x000204    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+                _do_cinit   0x0000f6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000110    program     static                          
+                copy_loop   0x000168    program     static                          
+            copy_one_byte   0x00016e    program     static                          
+             done_copying   0x00017c    program     static                          
+       ___return_lbl00002   0x000192    program     static                          
+                     done   0x000192    program     static                          
+             Delay10KTCYx   0x000194    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00019e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x0001a0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x0001a4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x0001ac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x0001b0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+            __zero_memory   0x0001c2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x0001d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x0001d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x0001d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x0001da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x0001e2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x0001f2    program     static                          
+       ___return_lbl00001   0x0001fc    program     static                          
+                   __init   0x0001fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
                __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
                __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\Ngat\Ngat.c
