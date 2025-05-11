@@ -2,11 +2,7 @@
 
 Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
--   [TIMER 0](#tmr0)
--   [TIMER 1](#tmr1)
--   [TIMER 2](#tmr2)
--   [TIMER 3](#tmr3)
--   [Mẫu TIMER](#mẫu-timer)
+-   [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
 
 ## ✏️ Thanh ghi
 
@@ -132,8 +128,23 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
 ```
 
-### Mẫu TIMER
+### Các hàm trong thư viện timers.h
+
+Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu tra cứu PIC](0-Tai-lieu-tra-cuu-PIC.pdf) để biết thêm chi tiết về cách sử dụng và các đối số config.
 
 ```c
-
+#include <timers.h>
+// Cần khai báo thư viện khi sử dụng các hàm liên quan đến timer
+{
+    // Hàm sử dụng để cấm hoạt động của timer
+    CloseTimer1();
+    // Hàm sử dụng để thiết lập các tham số cho timer
+    OpenTimer1(unsigned char config1
+                        &config2
+                        &...);
+    // Hàm sử dụng để đọc giá trị hiện thời của timer
+    int timer_value = ReadTimer1();
+    // Hàm sử dụng để ghi giá trị vào timer
+    WriteTimer1(unsigned int timer_value);
+}
 ```
