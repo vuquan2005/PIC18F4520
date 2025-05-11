@@ -33,11 +33,17 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 | --- | -------- | -------- | -------- | -------- | ------ | ------- | ------- |
 | 7️⃣  | 6️⃣       | 5️⃣       | 4️⃣       | 3️⃣       | 2️⃣     | 1️⃣      | 0️⃣      |
 
+-   Thanh ghi chứa giá tri đếm của Timer2: TMR2.
+-   Thanh ghi chu kỳ của Timer2(Period register): PR2.
+
 #### [T3CON](#T3CON-1)
 
 | RD16 | T3CCP2 | T3CKPS1 | T3CKPS0 | T3CCP1 | T3SYNC | TMR3CS | TMR3ON |
 | ---- | ------ | ------- | ------- | ------ | ------ | ------ | ------ |
 | 7️⃣   | 6️⃣     | 5️⃣      | 4️⃣      | 3️⃣     | 2️⃣     | 1️⃣     | 0️⃣     |
+
+-   Thanh ghi chứa giá tri đếm byte thấp của Timer1: TMR1L
+-   Thanh ghi chứa giá tri đếm byte cao của Timer1: TMR1H
 
 ### 📝 Cách dùng
 
@@ -104,33 +110,55 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
 ## 🚀 Sử dụng
 
-### TMR0
+### Nguồn xung
+
+-   Trong: Fosc/4
+-   Ngoài: TMR0: T0CKI (RA4); TMR1/3 T13CKI (RC1)
+
+## Chọn hệ số chia tần
+
+Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào timer.
+
+Nếu N < 0 (t > 6536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
+
+$ F = \dfrac{Fosc} {4*t*K} $
+$ T= \dfrac{4*t*K} {Fosc} $
+$ t = \dfrac{Fosc} {4*2*K} $
+$ N= 2^n - \dfrac{Fosc} {4*2*K} $
+
+Với:
+
+-   T: chu kỳ xung đầu ra (thời gian tràn)
+-   F: tần số xung đầu ra
+-   Fosc: tần số vi xử lý
+-   K: hệ số chia tần
+-   N: giá trị khởi đầu (nạp vào timer)
+-   t: $N = 2^n -t$ (n là số bit của timer 8/16)
+
+### Cờ tràn
 
 ```c
-
+// Kiểm tra tràn: == 1;
+// Đợi tràn while(timerIF == 0);
+INTCONbits.TMR0IF == 1; // Cờ ngắt timer 0
+PIR1bits.TMR1IF == 1;   // Cờ ngắt timer 1
+PIR1bits.TMR2IF == 1;   // Cờ ngắt timer 2
+PIR2bits.TMR3IF == 1;   // Cờ ngắt timer 3
 ```
 
-### TMR1
+### Đọc/ghi timer
 
 ```c
-
-```
-
-### TMR2
-
-```c
-
-```
-
-### TMR3
-
-```c
-
+// Ghi vào timer1
+TMR1H = (65536 - t) / 256;
+TMR1L = (65536 - t) % 256;
+// Đọc giá trị timer1
+unsigned int tmr = TMR1L + TMR1H * 256;
 ```
 
 ### Các hàm trong thư viện timers.h
 
-Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu tra cứu PIC](0-Tai-lieu-tra-cuu-PIC.pdf) để biết thêm chi tiết về cách sử dụng và các đối số config.
+Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu tra cứu PIC (tr44)](0-Tai-lieu-tra-cuu-PIC.pdf) để biết thêm chi tiết về cách sử dụng và các đối số config.
 
 ```c
 #include <timers.h>
@@ -143,8 +171,11 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
                         &config2
                         &...);
     // Hàm sử dụng để đọc giá trị hiện thời của timer
-    int timer_value = ReadTimer1();
+    unsigned int timer_value = ReadTimer1();
     // Hàm sử dụng để ghi giá trị vào timer
     WriteTimer1(unsigned int timer_value);
 }
 ```
+
+$$
+$$
