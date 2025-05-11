@@ -2,6 +2,11 @@
 
 Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
+-   [TIMER 0](#tmr0)
+-   [TIMER 1](#tmr1)
+-   [TIMER 2](#tmr2)
+-   [TIMER 3](#tmr3)
+-   [Mẫu TIMER](#mẫu-timer)
 
 ## ✏️ Thanh ghi
 
@@ -81,13 +86,7 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
 ```
 
-### Mẫu ngắt
-
-```c
-
-```
-
-### Mẫu ngắt có phân ưu tiên cao/thấp
+### Mẫu TIMER
 
 ```c
 
