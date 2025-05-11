@@ -4,9 +4,6 @@
 // Cau hinh he thong
 #pragma config OSC = HS	  // chon che do thach anh ngoai
 #pragma config MCLRE = ON // chon che do Rest tren chan MCLRE
-// chuong trinh chinh
-#define LED1 PORTDbits.RD0
-#define LED2 PORTDbits.RD1
 
 unsigned char maled[] = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90};
 void main()
