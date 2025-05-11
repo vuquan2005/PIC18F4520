@@ -24,7 +24,6 @@ void main (void)
 	OpenADC(ADC_FOSC_4 & ADC_RIGHT_JUST & ADC_2_TAD, 
 			ADC_CH0 & ADC_INT_OFF & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, 
 			0b1001);
-
 	while (1)
 	{
 		if (PORTBbits.RB7==0) //nhan
