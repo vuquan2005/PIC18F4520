@@ -210,7 +210,7 @@ void ngat_ngoai(void)
 void main()
 {
     ADCON1 = 0x0F;
-    // Khai báo ba chân INT0, INT1,INT2 <=> RB0, RB1, RB2
+    // Khai báo ba chân INT0, INT1,INT2 (RB0, RB1, RB2)
     TRISB = 0b00000111;
     // Cho phep ngat toan cuc
     INTCONbits.GIE = 1;
