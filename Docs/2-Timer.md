@@ -20,7 +20,7 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
 -   Thanh ghi chứa byte thấp của Timer0: TMR0L (8 bit, không định địa chỉ bit)
 -   Thanh ghi chứa byte cao của Timer0: TMR0H (8 bit, không định địa chỉ bit)
--   Thanh ghi điều khiển ngắt : [INTCON](/1-Ngat.md##intcon)
+-   Thanh ghi điều khiển ngắt : [INTCON](1-Ngat.md##intcon)
 
 #### [T1CON](#T1CON-1)
 
