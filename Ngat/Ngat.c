@@ -46,7 +46,7 @@ void main()
 	INTCONbits.INT0IF = 0;	 // Xoa co ngat INT0
 
 	INTCON3bits.INT2IE = 1;	 // Cho phep ngat ngoai INT2
-	INTCON2bits.INTEDG0 = 0; // Ngat suon am
+	INTCON2bits.INTEDG2 = 0; // Ngat suon am
 	INTCON3bits.INT2IF = 0;	 // Xoa co ngat INT2
 
 	while (1)
