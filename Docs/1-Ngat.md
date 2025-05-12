@@ -41,38 +41,41 @@ Mẫu sử dụng ngắt thực tế xem [ở đây 📖](#-sử-dụng).
 
 #### [RCON](#rcon)
 
-| Bit | Tên Bit | Mô tả                            |
-| --- | ------- | -------------------------------- |
-| 7️⃣  | `IPEN`  | Bit cho phép ưu tiên ngắt        |
-|     |         | 1 = Cho phép ưu tiên ngắt.       |
-|     |         | 0 = Không cho phép ưu tiên ngắt. |
+| Bit | Tên Bit | Mô tả                                                            |
+| --- | ------- | ---------------------------------------------------------------- |
+| 7️⃣  | `IPEN`  | Bit cho phép ưu tiên ngắt                                        |
+|     |         | 1 = Cho phép ưu tiên ngắt (cần khi sử dụng ưu tiên ngắt).        |
+|     |         | 0 = Không cho phép ưu tiên ngắt. (bị treo khi ngắt ưu tiên thấp) |
 
 #### [INTCON](#intcon)
 
-| Bit | Tên Bit     | Mô tả                                                                          |
-| --- | ----------- | ------------------------------------------------------------------------------ |
-| 7️⃣  | `GIE/GIEH ` | Bit cho phép ngắt toàn cục.                                                    |
-|     |             | Khi IPEN = 0, cho phép tất cả ngắt không ưu tiên.                              |
-|     |             | Khi IPEN = 1, cho phép tất cả ngắt ưu tiên cao.                                |
-| 6️⃣  | `PEIE/GIEL` | Bit cho phép ngắt ngoại vi.                                                    |
-|     |             | Khi IPEN = 0, cho phép tất cả ngắt ngoại vi không ưu tiên.                     |
-|     |             | Khi IPEN = 1, cho phép ngắt ngoại vi ưu tiên thấp.                             |
-| 5️⃣  | `TMR0IE`    | Bit cho phép ngắt tràn Timer0 (TMR0).                                          |
-|     |             | 1 = Cho phép                                                                   |
-|     |             | 0 = Cấm.                                                                       |
-| 4️⃣  | `INT0IE`    | Bit cho phép ngắt ngoài INT0.                                                  |
-|     |             | 1 = Cho phép                                                                   |
-|     |             | 0 = Cấm.                                                                       |
-| 3️⃣  | `RBIE`      | Bit cho phép ngắt khi thay đổi mức trên PortB.                                 |
-|     |             | 1 = Cho phép                                                                   |
-|     |             | 0 = Cấm.                                                                       |
-| 2️⃣  | `TMR0IF`    | Cờ báo ngắt tràn [Timer0](2-Timer.md#cờ-tràn). _(Phải được xóa bằng phần mềm)_ |
-| 1️⃣  | `INT0IF`    | Cờ báo ngắt ngoài INT0. _(Phải được xóa bằng phần mềm)_                        |
-|     |             | 1 = Có ngắt                                                                    |
-|     |             | 0 = Không có ngắt.                                                             |
-| 0️⃣  | `RBIF`      | Cờ báo thay đổi mức trên PortB. _(Phải được xóa bằng phần mềm)_                |
-|     |             | 1 = Có thay đổi                                                                |
-|     |             | 0 = Không thay đổi.                                                            |
+| Bit | Tên Bit     | Mô tả                                                                                                                          |
+| --- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 7️⃣  | `GIE/GIEH ` | ‼️Bit cho phép ngắt toàn cục.                                                                                                  |
+|     |             | 1 = (IPEN = 1): Cho phép các ngắt ưu tiên cao.                                                                                 |
+|     |             | \_\_\_\_ (IPEN = 0): Cho phép tất cả các ngắt không sử dụng mặt nạ (chỉ cho phép ngắt ưu tiên cao).                            |
+|     |             | 0 = Cấm tất cả các ngắt.                                                                                                       |
+| 6️⃣  | `PEIE/GIEL` | Bit cho phép ngắt ngoại vi.                                                                                                    |
+|     |             | 1 = (IPEN = 1): Cho phép tất cả các ngắt ngoại vi ưu tiên thấp (cả ưu tiên cao và ưu tiên thấp)(cần khi sử dụng ưu tiên ngắt). |
+|     |             | \_\_\_\_(IPEN = 0): Cho phép tất cả các ngắt ngoại vi không sử dụng mặt nạ (chỉ cho phép ngắt ưu tiên cao).                    |
+|     |             | 0 = (IPEN = 1): Cấm tất cả các ngắt ngoại vi ưu tiên thấp.                                                                     |
+|     |             | \_\_\_\_(IPEN = 0): Cấm tất cả các ngắt ngoại vi. (ngắt ưu tiên cao vẫn chạy??? Là sao :D)                                     |
+| 5️⃣  | `TMR0IE`    | Bit cho phép ngắt tràn Timer0 (TMR0).                                                                                          |
+|     |             | 1 = Cho phép                                                                                                                   |
+|     |             | 0 = Cấm.                                                                                                                       |
+| 4️⃣  | `INT0IE`    | Bit cho phép ngắt ngoài INT0.                                                                                                  |
+|     |             | 1 = Cho phép                                                                                                                   |
+|     |             | 0 = Cấm.                                                                                                                       |
+| 3️⃣  | `RBIE`      | Bit cho phép ngắt khi thay đổi mức trên PortB.                                                                                 |
+|     |             | 1 = Cho phép                                                                                                                   |
+|     |             | 0 = Cấm.                                                                                                                       |
+| 2️⃣  | `TMR0IF`    | Cờ báo ngắt tràn [Timer0](2-Timer.md#cờ-tràn). _(Phải được xóa bằng phần mềm)_                                                 |
+| 1️⃣  | `INT0IF`    | Cờ báo ngắt ngoài INT0. _(Phải được xóa bằng phần mềm)_                                                                        |
+|     |             | 1 = Có ngắt                                                                                                                    |
+|     |             | 0 = Không có ngắt.                                                                                                             |
+| 0️⃣  | `RBIF`      | Cờ báo thay đổi mức trên PortB. _(Phải được xóa bằng phần mềm)_                                                                |
+|     |             | 1 = Có thay đổi                                                                                                                |
+|     |             | 0 = Không thay đổi.                                                                                                            |
 
 #### [INTCON2](#intcon2)
 
@@ -297,15 +300,19 @@ void ngat_uu_tien_thap(void)
 void main()
 {
     ADCON1 = 0x0F;
-    // Khai báo ba chân INT0, INT1,INT2 <=> RB0, RB1, RB2
+    // Khai báo ba chân INT0, INT1,INT2 (RB0, RB1, RB2) là đầu vào
     TRISB = 0b00000111;
-    // Cho phep ngat toan cuc
+    // Cho phép phân ưu tiên
+    RCONbits.IPEN = 1;
+    // Cho phép ngắt toàn cục
     INTCONbits.GIE = 1;
+    // Cho phép ngắt ngoại vi (ưu tiên ngắt cần)
+    INTCONbits.PEIE = 1;
     // INT0
     INTCONbits.INT0IE = 1;   // Cho phép ngắt ngoài INT0
     INTCON2bits.INTEDG0 = 0; // Ngắt sườn âm
     INTCONbits.INT0IF = 0;   // Xoá cờ ngắt INT0
-    INTCON3bits.TMR1IP = 1;  // Set ưu tiên ngắt ngoài: cao
+    // INT0 mặc định là ngắt ưu tiên cao
     // INT1
     INTCON3bits.INT1IE = 1;  // Cho phép ngắt ngoài INT1
     INTCON2bits.INTEDG1 = 0; // Ngắt sườn âm
