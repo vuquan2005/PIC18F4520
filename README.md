@@ -8,5 +8,8 @@ Chứa tài liệu của học phần và hướng dẫn về lập trình vi đ
 
 ## [Template](0_Template)
 
-Mẫu project cho lập trình vi điều khiển [🔍](0_Template).
+Mẫu project cho lập trình vi điều khiển [🔍](Template).
 
+## [Bài tập](BaiTap)
+
+Một số bài tập với vi điều khiển PIC18F4520 [🔍](BaiTap).
