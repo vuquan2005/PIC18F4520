@@ -1,6 +1,7 @@
-#include <p18f4520.h>
-#include <Delays.h>
+// Hiển thị tần số xung trên chân RC0 (200-250Hz)
 
+#include <p18f4520.h>
+// #include <Delays.h>
 #include <timers.h>
 
 #pragma config OSC = HS
