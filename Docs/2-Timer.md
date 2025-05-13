@@ -125,19 +125,22 @@ Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào tim
 
 Nếu N < 0 (t > 6536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
 
-$ F = \dfrac{Fosc} {4*t*K} $
-$ T= \dfrac{4*t*K} {Fosc} $
-$ t = \dfrac{Fosc} {4*2*K} $
-$ N= 2^n - \dfrac{Fosc} {4*2*K} $
+$ F_{in} = \dfrac{Fosc} {4*K} $
+
+$ T= \dfrac{tc*4*K} {Fosc} $
+
+$ tc = \dfrac{T*Fosc} {4*K} $
+
+$ N= 2^n - tc +1 $
 
 Với:
 
--   T: chu kỳ xung đầu ra (thời gian tràn)
--   F: tần số xung đầu ra
+-   F<sub>in</sub>: tần số xung đầu vào
+-   T: chu kỳ xung đầu ra (thời gian tràn timer)
 -   Fosc: tần số vi xử lý
 -   K: hệ số chia tần
 -   N: giá trị khởi đầu (nạp vào timer)
--   t: $N = 2^n -t$ (n là số bit của timer 8/16)
+-   tc: số giá trị timer cần đếm cho đến khi tràn
 
 ### Cờ tràn
 
