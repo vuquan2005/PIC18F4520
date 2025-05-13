@@ -8,6 +8,11 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 -   [Đọc ghi timer](#đọcghi-timer)
 -   [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
 
+Một số bài tập sử dụng Timer:
+
+- Tạo xung trên chân RE1 bằng timer1 [🔍](/BaiTap/TaoXung/TaoXung.c)
+- Hiển thị tần số xung trên chân RC0 [🔍](/BaiTap/IHW/4.1/Template.c)
+
 ## ✏️ Thanh ghi
 
 ### 🖋️ Các thanh ghi liên quan đến Timer
