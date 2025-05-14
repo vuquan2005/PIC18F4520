@@ -1,4 +1,4 @@
-// truuyền một chuỗi ký tự qua USART
+// truyền một chuỗi ký tự qua USART
 
 #include <p18f4520.h>
 #include <stdio.h>
