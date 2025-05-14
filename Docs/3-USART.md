@@ -95,16 +95,15 @@ Giống với putsUSART (ít dùng hơn putsUSART), nhưng chuỗi được lưu
 
 ### Cách tính `spbrg`
 
--   USART_SYNCH_MODE
+-   **USART_SYNCH_MODE**
+
 
 $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
--   USART_ASYNCH_MODE
-
-    -   USART_BRGH_HIGH
+-   **USART_ASYNCH_MODE** (*USART_BRGH_HIGH*)
 
 $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
-    -   USART_BRGH_LOW
+-   **USART_ASYNCH_MODE** (*USART_BRGH_LOW*)
 
 $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
