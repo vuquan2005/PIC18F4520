@@ -103,8 +103,8 @@ $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
     -   USART_BRGH_HIGH
 
-        $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
+$$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
     -   USART_BRGH_LOW
 
-        $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
+$$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
