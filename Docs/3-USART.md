@@ -105,10 +105,10 @@ $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
 Chế độ không đồng bộ, baude cao:
 
-$$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
+$$ spbrg = \dfrac {FOSC} {16 * BaudRate} -1 $$
 
 -   **USART_ASYNCH_MODE** (*USART_BRGH_LOW*)
 
 Chế độ không đồng bộ, baude thấp:
 
-$$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
+$$ spbrg = \dfrac {FOSC} {64 * BaudRate} -1 $$
