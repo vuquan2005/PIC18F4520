@@ -39,8 +39,8 @@ void main(void)
 		// lấy từng chữ số lưu vào các biến
 		so[0] = soHienthi / 1000;
 		so[1] = (soHienthi % 1000) / 100;
-		so[2] = ((soHienthi % 1000) % 100) / 10;
-		so[3] = ((soHienthi % 1000) % 100) % 10;
+		so[2] = (soHienthi % 100) / 10;
+		so[3] = soHienthi % 10;
 		// hiển thị các số trên led
 		PORTD = 0b00000001;
 		PORTC = ma_led[so[0]];
