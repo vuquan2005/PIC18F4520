@@ -5,6 +5,7 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 -   [Nguồn xung](#nguồn-xung)
 -   [Chọn hệ số chia tần](#chọn-hệ-số-chia-tần)
 -   [Cờ tràn](#cờ-tràn)
+-   [Ngắt timer](#ngắt-timer)
 -   [Đọc ghi timer](#đọcghi-timer)
 -   [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
 
@@ -152,10 +153,25 @@ Với:
 ```c
 // Kiểm tra tràn: == 1;
 // Đợi tràn while(timerIF == 0);
-INTCONbits.TMR0IF == 1; // Cờ ngắt timer 0
-PIR1bits.TMR1IF == 1;   // Cờ ngắt timer 1
-PIR1bits.TMR2IF == 1;   // Cờ ngắt timer 2
-PIR2bits.TMR3IF == 1;   // Cờ ngắt timer 3
+INTCONbits.TMR0IF == 1; // Cờ tràn timer 0
+PIR1bits.TMR1IF == 1;   // Cờ tràn timer 1
+PIR1bits.TMR2IF == 1;   // Cờ tràn timer 2
+PIR2bits.TMR3IF == 1;   // Cờ tràn timer 3
+```
+
+### Ngắt timer
+
+```c
+RCONbits.IPEN = 1;
+INTCONbits.GIE = 1;
+// dùng GIEL, không dùng PEIE (lý do không biết:D)
+INTCONbits.GIEL = 1;
+// cho phép ngắt tràn TMR0, tương tự timer khác
+INTCONbits.TMR0IE = 1;
+// Set mức ưu tiến ngắt tràn timer0
+INTCON2bits.TMR0IP = 1;
+// Cờ tràn/ngắt timer
+INTCONbits.TMR0IF = 0;
 ```
 
 ### Đọc/ghi timer
