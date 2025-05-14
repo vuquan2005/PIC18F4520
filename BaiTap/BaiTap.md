@@ -14,7 +14,7 @@
 
 [`Hiển thị số lần nhấn 2 nút trên 2 led 7 đoạn bằng ngắt ngoài có ưu tiên ngắt`](/BaiTap/2-Ngat/2/)
 
-[`4 led hiển thị lần lượt, led 5 hiển thị khi nhấn nút`](/BaiTap/2-Ngat/Ngat/)
+[`4 led sáng lần lượt, led 5 sáng khi nhấn nút`](/BaiTap/2-Ngat/Ngat/)
 
 ## Timer
 
