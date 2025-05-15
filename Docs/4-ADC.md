@@ -59,6 +59,18 @@ CloseADC();
 
 Được dùng khi không chuyển đổi AD nữa.
 
+### Cách tính giá trị chuyển đổi ADC
+
+$$ D = \dfrac {V_{in} - V_{ref^-}}{V_{ref^+} - V_{ref^-}} * (2^n - 1) $$
+
+Trong đó:
+
+-   n : Độ phân giải của ADC (8-bit, 10-bit).
+
+Đối với $ V_{ref^+} = VPP = 5(V) $ và $ V_{ref^-} = VSS = 0(V) $ thì:
+
+$$ D = \dfrac {V_{in}} {5} * (2^n - 1) $$
+
 ### Mẫu ADC
 
 ```c
@@ -77,8 +89,8 @@ void main (void)
 	ADCON1 = 0x0f; // = 0b00001111;
     // Khai báo các chân AN là đầu vào
 	// Open ADC
-	OpenADC(ADC_FOSC_4 & ADC_RIGHT_JUST & ADC_2_TAD, 
-			ADC_CH0 & ADC_INT_OFF & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS, 
+	OpenADC(ADC_FOSC_4 & ADC_RIGHT_JUST & ADC_2_TAD,
+			ADC_CH0 & ADC_INT_OFF & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS,
 			portConfig);
 	while (1)
 	{
