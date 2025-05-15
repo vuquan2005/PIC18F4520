@@ -73,7 +73,8 @@ CloseADC();
 void main (void)
 {
 	unsigned int x;
-	ADCON1=0x0f;
+    // Có thể không cần quan tâm 4 bit cuối do sẽ set lại trong portConfig trong OpenADC
+	ADCON1 = 0x0f; // = 0b00001111;
     // Khai báo các chân AN là đầu vào
 	// Open ADC
 	OpenADC(ADC_FOSC_4 & ADC_RIGHT_JUST & ADC_2_TAD, 
@@ -81,13 +82,14 @@ void main (void)
 			portConfig);
 	while (1)
 	{
-        SetChanADC( ADC_CH0 );
+        SetChanADC(ADC_CH0);
         // Bắt đầu chuyển đổi
         ConvertADC();
         // Đợi hoàn thành
-        while(BusyADC());
+        while(BusyADC())
+            ;
         // Đọc giá trị
-        x=ReadADC();
+        x = ReadADC();
         // Do somethings
 	}
 }
