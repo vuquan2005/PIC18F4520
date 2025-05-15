@@ -148,6 +148,16 @@ Với:
 -   N: giá trị khởi đầu (nạp vào timer)
 -   tc: số giá trị timer cần đếm cho đến khi tràn
 
+### Bật/tắt timer
+
+```c
+// Bật timers
+T0CONbits.TMR0ON = 1;
+T1CONbits.TMR1ON = 1;
+T2CONbits.TMR2ON =1;
+T3CONbits.TMR3ON =1;
+```
+
 ### Cờ tràn
 
 ```c
@@ -192,14 +202,17 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
 #include <timers.h>
 // Cần khai báo thư viện khi sử dụng các hàm liên quan đến timer
 {
-    // Hàm sử dụng để cấm hoạt động của timer
-    CloseTimer1();
     // Hàm sử dụng để thiết lập các tham số cho timer
     OpenTimer1(unsigned char config1
                         &config2
                         &...);
     // Hàm sử dụng để đọc giá trị hiện thời của timer
     unsigned int timer_value = ReadTimer1();
+    // Đợi timer tràn
+    while (INTCONbits.TMR0IF == 1)
+        ;
+    // Hàm sử dụng để cấm hoạt động của timer
+    CloseTimer1();
     // Hàm sử dụng để ghi giá trị vào timer
     WriteTimer1(unsigned int timer_value);
 }
