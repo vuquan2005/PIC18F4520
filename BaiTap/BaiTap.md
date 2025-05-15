@@ -34,6 +34,8 @@
 
 ## PWM
 
+[`Tạo xung 1000Hz, T_on = 50%`](/BaiTap/6-PWM/PWM/)
+
 ## Bài tập tổng hợp
 
 [`Tạo xung trên RD0 bằng cách ngắt timer`](/BaiTap/7-Bai_tap_tong_hop/NgatTimer-Taoxung/)
