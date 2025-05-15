@@ -8,7 +8,7 @@
 #include <pwm.h>
 ```
 
-### Các hàm ADC
+### Các hàm PWM
 
 #### OpenPWM
 
