@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sat May 10 22:12:29 2025
+Linker Map File - Created Thu May 15 14:13:23 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -16,28 +16,26 @@ Linker Map File - Created Sat May 10 22:12:29 2025
           .code_adcbusy.o       code   0x000272    program   0x00000a
           .code_adcconv.o       code   0x00027c    program   0x000004
            .code___init.o       code   0x000280    program   0x000002
-         .idata_c018i.o_i    romdata   0x000282    program   0x000000
-        .romdata___init.o    romdata   0x000282    program   0x000000
-        .idata___init.o_i    romdata   0x000282    program   0x000000
-         .romdata_c018i.o    romdata   0x000282    program   0x000000
-      .romdata_adcsetch.o    romdata   0x000282    program   0x000000
       .idata_adcsetch.o_i    romdata   0x000282    program   0x000000
-            .code_c018i.o       code   0x000282    program   0x000000
+      .romdata_adcsetch.o    romdata   0x000282    program   0x000000
        .romdata_adcread.o    romdata   0x000282    program   0x000000
        .idata_adcread.o_i    romdata   0x000282    program   0x000000
-           .idata_ADC.o_i    romdata   0x000282    program   0x000000
+        .idata___init.o_i    romdata   0x000282    program   0x000000
+        .romdata___init.o    romdata   0x000282    program   0x000000
        .romdata_adcopen.o    romdata   0x000282    program   0x000000
        .idata_adcopen.o_i    romdata   0x000282    program   0x000000
        .romdata_adcconv.o    romdata   0x000282    program   0x000000
        .idata_adcconv.o_i    romdata   0x000282    program   0x000000
-           .romdata_ADC.o    romdata   0x000282    program   0x000000
        .romdata_adcbusy.o    romdata   0x000282    program   0x000000
        .idata_adcbusy.o_i    romdata   0x000282    program   0x000000
+           .romdata_ADC.o    romdata   0x000282    program   0x000000
+           .idata_ADC.o_i    romdata   0x000282    program   0x000000
+            .code_c018i.o       code   0x000282    program   0x000000
+         .romdata_c018i.o    romdata   0x000282    program   0x000000
+         .idata_c018i.o_i    romdata   0x000282    program   0x000000
      .config_300001_ADC.o    romdata   0x300001    program   0x000001
-     .config_300002_ADC.o    romdata   0x300002    program   0x000001
      .config_300003_ADC.o    romdata   0x300003    program   0x000001
      .config_300005_ADC.o    romdata   0x300005    program   0x000001
-     .config_300006_ADC.o    romdata   0x300006    program   0x000001
                  .tmpdata      udata   0x000000       data   0x000004
                 MATH_DATA      udata   0x000004       data   0x000002
            .udata_c018i.o      udata   0x000080       data   0x00000a
@@ -66,9 +64,10 @@ Linker Map File - Created Sat May 10 22:12:29 2025
                            ---------   ---------      
                             0x000000    0x000005      
                             0x00002a    0x000281      
-                            0x300001    0x300003      
-                            0x300005    0x300006      
-            611 out of 33048 program addresses used, program memory utilization is 1%
+                            0x300001    0x300001      
+                            0x300003    0x300003      
+                            0x300005    0x300005      
+            609 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
@@ -83,11 +82,9 @@ Linker Map File - Created Sat May 10 22:12:29 2025
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00001   0x00025e    program     static                          
        ___return_lbl00002   0x000186    program     static                          
-               __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_1   0x300002    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_2   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_3   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_4   0x300006    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+               __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
+               __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
+               __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                    __init   0x000280    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
             __zero_memory   0x000224    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 _do_cinit   0x0000ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
@@ -101,7 +98,7 @@ Linker Map File - Created Sat May 10 22:12:29 2025
                      loop   0x000254    program     static                          
                    loop_h   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    loop_l   0x00023c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+                     main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                      test   0x000104    program     static                          
                zero_block   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -296,7 +293,7 @@ Linker Map File - Created Sat May 10 22:12:29 2025
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 __FPFLAGS   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                  __tmp_0   0x000000       data     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+                  __tmp_0   0x000000       data     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
@@ -312,7 +309,7 @@ Linker Map File - Created Sat May 10 22:12:29 2025
                 ---------  ---------  ---------  --------- ---------                
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
-                     main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+                     main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                 _do_cinit   0x0000ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                      test   0x000104    program     static                          
                 copy_loop   0x00015c    program     static                          
@@ -334,15 +331,13 @@ Linker Map File - Created Sat May 10 22:12:29 2025
                   BusyADC   0x000272    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
                ConvertADC   0x00027c    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
                    __init   0x000280    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-               __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_1   0x300002    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_2   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_3   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
-               __config_4   0x300006    program     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+               __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
+               __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
+               __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
-                  __tmp_0   0x000000       data     static D:\Edu\PIC18F4520\WorkSpace\ADC\ADC.c
+                  __tmp_0   0x000000       data     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                      SIGN   0x000004       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm

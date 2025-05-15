@@ -1,15 +1,10 @@
 #include <P18f4520.h>
-#include <delays.h>
 #include <adc.h>
 
 #pragma config OSC = HS
 #pragma config MCLRE = ON
 #pragma config WDT = OFF
 #pragma config PBADEN = OFF
-
-#pragma config PWRT=ON
-#pragma config BOREN=OFF
-#pragma config LVP=OFF
 
 void main (void)
 {
