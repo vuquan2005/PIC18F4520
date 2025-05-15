@@ -1,38 +1,38 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Thu May 15 14:13:23 2025
+Linker Map File - Created Thu May 15 14:45:59 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x00002a    program   0x000002
-              .code_ADC.o       code   0x00002c    program   0x0000be
-               _cinit_scn       code   0x0000ea    program   0x00009e
-          .code_adcopen.o       code   0x000188    program   0x00006e
-         .code_adcsetch.o       code   0x0001f6    program   0x00002e
-                    .code       code   0x000224    program   0x000020
-             _startup_scn       code   0x000244    program   0x00001c
-          .code_adcread.o       code   0x000260    program   0x000012
-          .code_adcbusy.o       code   0x000272    program   0x00000a
-          .code_adcconv.o       code   0x00027c    program   0x000004
-           .code___init.o       code   0x000280    program   0x000002
-      .idata_adcsetch.o_i    romdata   0x000282    program   0x000000
-      .romdata_adcsetch.o    romdata   0x000282    program   0x000000
-       .romdata_adcread.o    romdata   0x000282    program   0x000000
-       .idata_adcread.o_i    romdata   0x000282    program   0x000000
-        .idata___init.o_i    romdata   0x000282    program   0x000000
-        .romdata___init.o    romdata   0x000282    program   0x000000
-       .romdata_adcopen.o    romdata   0x000282    program   0x000000
-       .idata_adcopen.o_i    romdata   0x000282    program   0x000000
-       .romdata_adcconv.o    romdata   0x000282    program   0x000000
-       .idata_adcconv.o_i    romdata   0x000282    program   0x000000
-       .romdata_adcbusy.o    romdata   0x000282    program   0x000000
-       .idata_adcbusy.o_i    romdata   0x000282    program   0x000000
-           .romdata_ADC.o    romdata   0x000282    program   0x000000
-           .idata_ADC.o_i    romdata   0x000282    program   0x000000
-            .code_c018i.o       code   0x000282    program   0x000000
-         .romdata_c018i.o    romdata   0x000282    program   0x000000
-         .idata_c018i.o_i    romdata   0x000282    program   0x000000
+              .code_ADC.o       code   0x00002c    program   0x0000c0
+               _cinit_scn       code   0x0000ec    program   0x00009e
+          .code_adcopen.o       code   0x00018a    program   0x00006e
+         .code_adcsetch.o       code   0x0001f8    program   0x00002e
+                    .code       code   0x000226    program   0x000020
+             _startup_scn       code   0x000246    program   0x00001c
+          .code_adcread.o       code   0x000262    program   0x000012
+          .code_adcbusy.o       code   0x000274    program   0x00000a
+          .code_adcconv.o       code   0x00027e    program   0x000004
+           .code___init.o       code   0x000282    program   0x000002
+      .idata_adcsetch.o_i    romdata   0x000284    program   0x000000
+      .romdata_adcsetch.o    romdata   0x000284    program   0x000000
+       .romdata_adcread.o    romdata   0x000284    program   0x000000
+       .idata_adcread.o_i    romdata   0x000284    program   0x000000
+        .idata___init.o_i    romdata   0x000284    program   0x000000
+        .romdata___init.o    romdata   0x000284    program   0x000000
+       .romdata_adcopen.o    romdata   0x000284    program   0x000000
+       .idata_adcopen.o_i    romdata   0x000284    program   0x000000
+       .romdata_adcconv.o    romdata   0x000284    program   0x000000
+       .idata_adcconv.o_i    romdata   0x000284    program   0x000000
+       .romdata_adcbusy.o    romdata   0x000284    program   0x000000
+       .idata_adcbusy.o_i    romdata   0x000284    program   0x000000
+           .romdata_ADC.o    romdata   0x000284    program   0x000000
+           .idata_ADC.o_i    romdata   0x000284    program   0x000000
+            .code_c018i.o       code   0x000284    program   0x000000
+         .romdata_c018i.o    romdata   0x000284    program   0x000000
+         .idata_c018i.o_i    romdata   0x000284    program   0x000000
      .config_300001_ADC.o    romdata   0x300001    program   0x000001
      .config_300003_ADC.o    romdata   0x300003    program   0x000001
      .config_300005_ADC.o    romdata   0x300005    program   0x000001
@@ -63,44 +63,44 @@ Linker Map File - Created Thu May 15 14:13:23 2025
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000005      
-                            0x00002a    0x000281      
+                            0x00002a    0x000283      
                             0x300001    0x300001      
                             0x300003    0x300003      
                             0x300005    0x300005      
-            609 out of 33048 program addresses used, program memory utilization is 1%
+            611 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                  BusyADC   0x000272    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
-               ConvertADC   0x00027c    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
-                  OpenADC   0x000188    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
-                  ReadADC   0x000260    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
-               SetChanADC   0x0001f6    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
+                  BusyADC   0x000274    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
+               ConvertADC   0x00027e    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
+                  OpenADC   0x00018a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
+                  ReadADC   0x000262    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
+               SetChanADC   0x0001f8    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00025e    program     static                          
-       ___return_lbl00002   0x000186    program     static                          
+       ___return_lbl00001   0x000260    program     static                          
+       ___return_lbl00002   0x000188    program     static                          
                __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
-                   __init   0x000280    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000224    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x0000ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __init   0x000282    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+            __zero_memory   0x000226    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x0000ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000244    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x00023a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x00015c    program     static                          
-            copy_one_byte   0x000162    program     static                          
-                     done   0x000186    program     static                          
-             done_copying   0x000170    program     static                          
-                     loop   0x000254    program     static                          
-                   loop_h   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x00023c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000246    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x00023c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x00015e    program     static                          
+            copy_one_byte   0x000164    program     static                          
+                     done   0x000188    program     static                          
+             done_copying   0x000172    program     static                          
+                     loop   0x000256    program     static                          
+                   loop_h   0x000234    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x00023e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                      main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
-                     test   0x000104    program     static                          
-               zero_block   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     test   0x000106    program     static                          
+               zero_block   0x000234    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -310,27 +310,27 @@ Linker Map File - Created Thu May 15 14:13:23 2025
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
                      main   0x00002c    program     extern D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
-                _do_cinit   0x0000ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000104    program     static                          
-                copy_loop   0x00015c    program     static                          
-            copy_one_byte   0x000162    program     static                          
-             done_copying   0x000170    program     static                          
-       ___return_lbl00002   0x000186    program     static                          
-                     done   0x000186    program     static                          
-                  OpenADC   0x000188    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
-               SetChanADC   0x0001f6    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
-            __zero_memory   0x000224    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x000232    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x00023a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x00023c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x000244    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000254    program     static                          
-       ___return_lbl00001   0x00025e    program     static                          
-                  ReadADC   0x000260    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
-                  BusyADC   0x000272    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
-               ConvertADC   0x00027c    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
-                   __init   0x000280    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+                _do_cinit   0x0000ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000106    program     static                          
+                copy_loop   0x00015e    program     static                          
+            copy_one_byte   0x000164    program     static                          
+             done_copying   0x000172    program     static                          
+       ___return_lbl00002   0x000188    program     static                          
+                     done   0x000188    program     static                          
+                  OpenADC   0x00018a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
+               SetChanADC   0x0001f8    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcsetch.c
+            __zero_memory   0x000226    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x000234    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x000234    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x00023c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x00023e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000246    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000256    program     static                          
+       ___return_lbl00001   0x000260    program     static                          
+                  ReadADC   0x000262    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
+                  BusyADC   0x000274    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
+               ConvertADC   0x00027e    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
+                   __init   0x000282    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
                __config_0   0x300001    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                __config_1   0x300003    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
                __config_2   0x300005    program     static D:\Edu\PIC18F4520\WorkSpace\BaiTap\5-ADC\ADC\ADC.c
