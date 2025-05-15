@@ -56,10 +56,20 @@ Các config:
 #### `CloseUSART`
 
 ```c
+while (BusyUSART())
+    ;
+```
+
+Để đợi USART rảnh
+BusyUSART là hàm báo bận/đang truyền
+
+#### `CloseUSART`
+
+```c
 CloseUSART();
 ```
 
-Được dùng khi không sử dụng USART.
+Được dùng khi không sử dụng USART nữa.
 
 #### `ReadUSART`
 
@@ -101,14 +111,48 @@ Chế độ đồng bộ:
 
 $$ spbrg = \dfrac {FOSC} {4 * BaudRate} -1 $$
 
--   **USART_ASYNCH_MODE** (*USART_BRGH_HIGH*)
+-   **USART_ASYNCH_MODE** (_USART_BRGH_HIGH_)
 
 Chế độ không đồng bộ, baude cao:
 
 $$ spbrg = \dfrac {FOSC} {16 * BaudRate} -1 $$
 
--   **USART_ASYNCH_MODE** (*USART_BRGH_LOW*)
+-   **USART_ASYNCH_MODE** (_USART_BRGH_LOW_)
 
 Chế độ không đồng bộ, baude thấp:
 
 $$ spbrg = \dfrac {FOSC} {64 * BaudRate} -1 $$
+
+### Mẫu USART
+
+```c
+#include <p18f4520.h>
+#include <usart.h>
+
+#pragma config OSC = HS
+#pragma config MCLRE = ON
+#pragma config WDT = OFF
+#pragma config PBADEN = OFF
+#pragma config PWRT=ON
+#pragma config BOREN=OFF
+#pragma config LVP=OFF
+
+void main()
+{
+    char kyTu;
+    ADCON1 = 0x0F;
+    // Khai báo chân TX ra, RX vào
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
+    
+    OpenUSART( config, spbrg);
+
+    while (1)
+    {
+        kyTu = ReadUSART();
+        WriteUSART(kyTu);
+        // Do some thing
+    }
+}
+
+```
