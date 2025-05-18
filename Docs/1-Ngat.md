@@ -43,7 +43,8 @@ Mẫu sử dụng ngắt thực tế xem [ở đây 📖](#-sử-dụng).
 
 ```c
 INTCONbits.GIE = 1;  // Cho phép ngắt toàn cục
-// INTCONbits.PEIE = 1; // Chưa biết dùng =))
+INTCONbits.PEIE = 1; // Chưa hiểu cách dùng lắm =))
+// INTCONbits.GIEL =1; // Dùng khi ngắt timer, không dùng PEIE (lý do không biết:D)
 ```
 
 ### INT0
@@ -127,6 +128,7 @@ void main()
     TRISB = 0b00000111;
     // Cho phep ngat toan cuc
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1; // Không cần cũng chạy, k hiểu lắm nhưng cho vào cho chắc
     // INT0
     INTCONbits.INT0IE = 1;   // Cho phép ngắt ngoài INT0
     INTCON2bits.INTEDG0 = 0; // Ngắt sườn âm
