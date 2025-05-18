@@ -65,13 +65,13 @@ Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào tim
 
 Nếu N < 0 (t > 6536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
 
-$ F_{in} = \dfrac{Fosc} {4*K} $
+$$ F_{in} = \dfrac{Fosc} {4*K} $$
 
-$ T= \dfrac{tc*4*K} {Fosc} $
+$$ T = \dfrac {tc*4*K} {Fosc}$$
 
-$ tc = \dfrac{T*Fosc} {4*K} $
+$$ tc = \dfrac {T*Fosc} {4*K}$$
 
-$ N= 2^n - tc +1 $
+$$ N = 2^n - tc +1 $$
 
 Với:
 
