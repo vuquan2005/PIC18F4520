@@ -52,6 +52,8 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
 ## 🚀 Sử dụng
 
+Lưu ý: có vẻ như timer1 và timer3 hoạt động ở chế độ 16bit. Bit 7 (RD16) trên 2 thanh ghi T1CON và T3CON chỉ là chế độ đọc/ghi, đồng bộ giữa hai thanh ghi L và H chứ không liên quan đến chế độ hoạt động của timer.
+
 ### Nguồn xung
 
 -   Trong: Fosc/4
@@ -131,8 +133,8 @@ unsigned int tmr = TMR1L + TMR1H * 256;
 Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu tra cứu PIC (tr44)](0-Tai-lieu-tra-cuu-PIC.pdf) để biết thêm chi tiết về cách sử dụng và các đối số config.
 
 ```c
-#include <timers.h>
 // Cần khai báo thư viện khi sử dụng các hàm liên quan đến timer
+#include <timers.h>
 {
     // Hàm sử dụng để thiết lập các tham số cho timer
     OpenTimer1(unsigned char config1
@@ -147,5 +149,68 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
     CloseTimer1();
     // Hàm sử dụng để ghi giá trị vào timer
     WriteTimer1(unsigned int timer_value);
+}
+```
+### Mẫu Timer 
+
+```c
+#include <p18f4520.h>
+
+#pragma config OSC = HS
+#pragma config WDT = OFF
+#pragma config MCLRE = ON
+
+void main()
+{
+	TRISE = 0b01;
+	ADCON1 = 0x0F;
+	
+	while (1)
+	{
+        // Đặt giá trị ban đầu
+        TMR1H = (65536 - 2000) / 256;
+        TMR1L = (65536 - 2000) % 256;
+        // Bật timer1
+	    T1CON = 0b00000001;
+        // Đợi cho đến khi timer1 tràn
+        while (PIR1bits.TMR1IF == 0)
+            ;
+        // Tắt timer1
+	    T1CON = 0b00000000;
+        // Code tràn timer ở đây
+        // Xoá cờ tràn
+        PIR1bits.TMR1IF = 0;
+	}
+}
+```
+
+#### Dùng timers.h
+
+```c
+#include <p18f4520.h>
+#include <timers.h>
+
+#pragma config OSC = HS
+#pragma config WDT = OFF
+#pragma config MCLRE = ON
+
+void main()
+{
+	TRISE = 0b01;
+	ADCON1 = 0x0F;
+    //Timer1 on, internal clock source, 1:1 prescaler
+	OpenTimer1(TIMER_INT_OFF & T1_PS_1_1 & T1_SOURCE_INT);
+	while (1)
+	{
+
+        // Đặt giá trị ban đầu
+        WriteTimer1(65536 - 2000);  // 250Hz
+        // Đợi cho đến khi timer1 tràn
+        while (PIR1bits.TMR1IF == 0)
+            ;
+        // Code tràn timer ở đây
+        // Xoá cờ tràn
+        PIR1bits.TMR1IF = 0;
+	}
 }
 ```
