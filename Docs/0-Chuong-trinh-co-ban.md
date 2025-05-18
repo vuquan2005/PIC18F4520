@@ -52,12 +52,13 @@ void main(void)
 
 Cách tính tham số nạp vào các hàm Delay:
 
-$$ delay = \frac{Fosc}{4} * \dfrac {T_{delay}}{delayFunction} $$
+$$ T_{delay} = \frac {4}{Fosc} * t * {n} $$
 
 Trong đó:
 
 -   Fosc là tần số của bộ dao động nội.
 -   $T_{delay}$ là thời gian delay cần.
--   delayFunction là hàm delay cần thiết (Delay1KTCYx, Delay10KTCYx, Delay100KTCYx, ...)
+-   t là tham số nạp vào hàm Delay.
+-   n là bội số của $T_{cy}$ trong Delay`n`TCYx(`t`). (10, 100, 1K, 10K)
 
 _Nếu thời gian cần delay quá lớn, ta có thể chia nhỏ thành nhiều lần delay._
