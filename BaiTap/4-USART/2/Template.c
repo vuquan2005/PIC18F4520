@@ -15,7 +15,7 @@
 #pragma config LVP = OFF
 
 unsigned char n = 0;
-char txt[10];
+char x, txt[10];
 
 #define PB PORTAbits.RA0
 
@@ -29,24 +29,34 @@ void main()
 
     while (1)
     {
-        // Nếu nhận được ký tự 'a' thì dừng
-        if (ReadUSART() == 'a')
-            break;
         // Đếm số lần nhấn nút
         while (PB == 0)
             ;
         while (PB == 1)
             ;
         n++;
+
         // Lớn hơn 12 thì dừng
         if (n > 12)
             break;
+
+        // Chờ đợi để gửi xong// Chờ đợi để gửi xong
+        while (BusyUSART())
+            ;
+        // Nếu nhận được ký tự 'a' thì dừng
+        x = ReadUSART();
+        if (x == 'a')
+            break;
+
         // Chuyển số thành chuỗi (\r\n là xuống dòng, có thể bỏ qua)
         sprintf(txt, "%d,0\r\n", n);
-        // Chờ đợi để gửi xong
+        // Chờ USART rảnh
         while (BusyUSART())
             ;
         // Gửi chuỗi
         putsUSART(txt);
     }
+    // Nếu chương trình gặp lỗi thì tạo vòng lặp ở đây để tránh chương trình lặp lại
+    // while (1)
+    //     ;
 }
