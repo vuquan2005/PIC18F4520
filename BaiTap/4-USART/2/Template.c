@@ -15,7 +15,7 @@
 #pragma config LVP = OFF
 
 unsigned char n = 0;
-char txt[20];
+char txt[10];
 
 #define PB PORTAbits.RA0
 
@@ -24,8 +24,8 @@ void main()
     ADCON1 = 0x0f;
     TRISCbits.RC6 = 0;
     TRISCbits.RC7 = 1;
-
-    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_CONT_RX & USART_BRGH_HIGH, 1439);
+    // Mở USART, baudrate 4800, Fosc = 11.0592 MHz, baud cao, 8 bit,...
+    OpenUSART(USART_TX_INT_OFF & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_CONT_RX & USART_BRGH_HIGH, 143);
 
     while (1)
     {
@@ -41,8 +41,8 @@ void main()
         // Lớn hơn 12 thì dừng
         if (n > 12)
             break;
-        // Chuyển số thành chuỗi
-        sprintf(txt, "Dem duoc: %d", n);
+        // Chuyển số thành chuỗi (\r\n là xuống dòng, có thể bỏ qua)
+        sprintf(txt, "%d,0\r\n", n);
         // Chờ đợi để gửi xong
         while (BusyUSART())
             ;
