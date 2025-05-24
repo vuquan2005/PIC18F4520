@@ -67,9 +67,9 @@ Nếu N < 0 (t > 6536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số ch
 
 $$ F_{in} = \dfrac{Fosc} {4*K} $$
 
-$$ T = \dfrac {tc*4*K} {Fosc}$$
+$$ T = \dfrac{tc*4*K} {Fosc} $$
 
-$$ tc = \dfrac {T*Fosc} {4*K}$$
+$$ tc = \dfrac{T*Fosc} {4*K} $$
 
 $$ N = 2^n - tc +1 $$
 
