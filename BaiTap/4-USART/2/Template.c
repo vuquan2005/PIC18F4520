@@ -1,4 +1,4 @@
-// truyền một số lần nhấn nút qua USART, không dùng ngắt, ngừng khi nhận ký tự 'a'
+// Truyền một số lần nhấn nút qua USART, không dùng ngắt, ngừng khi nhận ký tự 'a'
 
 #include <p18f4520.h>
 #include <usart.h>
