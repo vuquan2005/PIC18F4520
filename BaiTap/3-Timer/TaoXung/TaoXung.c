@@ -51,7 +51,7 @@ void main()
 // 		else
 // 		{
 // 			// dat gia tri ban dau cho timer1
-//			// chi lap den 2000 lan cho den khi tran
+// 			// chi lap den 2000 lan cho den khi tran
 // 			WriteTimer1(65536 - 2000);
 // 			// lap cho den khi timer1 tran
 // 			while (PIR1bits.TMR1IF == 0)
