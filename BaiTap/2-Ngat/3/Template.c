@@ -1,4 +1,4 @@
-// Hiển thị số lần nhấn nút trên led 7 đoạn bằng ngắt ngoài
+// Hiển thị số lần nhấn nút 4 led, nút 1 tăng, nút 2 reset, led còn lại nhấp nháy liên tục
 
 #include <p18f4520.h>
 #include <delays.h>
@@ -54,7 +54,7 @@ void main()
 
     // Cấu hình ngắt ngoài
     INTCONbits.GIE = 1;  // Cho phép ngắt toàn cục
-    INTCONbits.PEIE = 1; // Chưa hiểu cách dùng lắm =))
+    INTCONbits.PEIE = 1; 
 
     INTCONbits.INT0IE = 1;   // Cho phép ngắt ngoài INT0
     INTCON2bits.INTEDG0 = 0; // Ngắt sườn âm
