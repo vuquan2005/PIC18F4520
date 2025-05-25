@@ -71,7 +71,7 @@ $$ T = \dfrac{tc*4*K} {Fosc} $$
 
 $$ tc = \dfrac{T*Fosc} {4*K} $$
 
-$$ N = 2^n - tc +1 $$
+$$ N = 2^n - tc + 1 $$
 
 Với:
 
@@ -86,10 +86,13 @@ Với:
 
 ```c
 // Ghi vào timer1
-TMR1H = (65536 - t) / 256;
-TMR1L = (65536 - t) % 256;
+TMR1H = (65536 - tc + 1) / 256;
+TMR1L = (65536 - tc + 1) % 256;
 // Đọc giá trị timer1
 unsigned int tmr = TMR1L + TMR1H * 256;
+
+// Ghi bằng timers.h
+WriteTimer1(65536 - tc + 1);
 ```
 
 ### Bật/tắt timer
@@ -148,7 +151,7 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
     // Hàm sử dụng để cấm hoạt động của timer
     CloseTimer1();
     // Hàm sử dụng để ghi giá trị vào timer
-    WriteTimer1(unsigned int timer_value);
+    WriteTimer1(65536 - tc + 1);
 }
 ```
 ### Mẫu Timer 
