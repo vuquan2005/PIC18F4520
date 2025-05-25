@@ -63,7 +63,7 @@ Lưu ý: có vẻ như timer1 và timer3 hoạt động ở chế độ 16bit. B
 
 Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào timer.
 
-Nếu N < 0 (t > 6536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
+Nếu N < 0 (t > 65536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
 
 $$ F_{in} = \dfrac{Fosc} {4*K} $$
 
