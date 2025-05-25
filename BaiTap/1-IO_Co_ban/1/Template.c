@@ -7,7 +7,7 @@
 #pragma config WDT = OFF
 #pragma config PBADEN = OFF
 
-// lấy ở trang 73 tài liệu tra cứu PIC18F4520
+// lấy ở trang 73 tài liệu tra cứu pic
 char maled[] = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90};
 char n1, n2;
 
