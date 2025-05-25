@@ -40,7 +40,7 @@ void main()
         if (n > 12)
             break;
 
-        // Chờ đợi để gửi xong// Chờ đợi để gửi xong
+        // Chờ đợi để gửi xong
         while (BusyUSART())
             ;
         // Nếu nhận được ký tự 'a' thì dừng
