@@ -53,9 +53,7 @@ INTCONbits.PEIE = 1; // Chưa hiểu cách dùng lắm =))
 INTCONbits.INT0IE = 1;	 // Cho phép ngắt ngoài INT0
 INTCON2bits.INTEDG0 = 0; // Ngắt sườn âm
 INTCONbits.INT0IF = 0;	 // Xoá cờ ngắt INT0
-// Nếu có ưu tiên
-// INTCON2bits.TMR0IP = 1; // Ưu tiên cao
-// INTCON2bits.TMR0IP = 0; // Ưu tiên thấp
+// Lưu ý Ngắt INT0 luôn là ngắt ưu tiên cao
 ```
 
 ### INT1
