@@ -59,7 +59,7 @@ Lưu ý: có vẻ như timer1 và timer3 hoạt động ở chế độ 16bit. B
 -   Trong: Fosc/4
 -   Ngoài: TMR0: T0CKI (RA4); TMR1/3 T13CKI (RC1)
 
-## Chọn hệ số chia tần
+### Chọn hệ số chia tần
 
 Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào timer.
 
@@ -81,6 +81,16 @@ Với:
 -   K: hệ số chia tần
 -   N: giá trị khởi đầu (nạp vào timer)
 -   tc: số giá trị timer cần đếm cho đến khi tràn
+
+### Đọc/ghi timer
+
+```c
+// Ghi vào timer1
+TMR1H = (65536 - t) / 256;
+TMR1L = (65536 - t) % 256;
+// Đọc giá trị timer1
+unsigned int tmr = TMR1L + TMR1H * 256;
+```
 
 ### Bật/tắt timer
 
@@ -116,16 +126,6 @@ INTCONbits.TMR0IE = 1;
 INTCON2bits.TMR0IP = 1;
 // Cờ tràn/ngắt timer
 INTCONbits.TMR0IF = 0;
-```
-
-### Đọc/ghi timer
-
-```c
-// Ghi vào timer1
-TMR1H = (65536 - t) / 256;
-TMR1L = (65536 - t) % 256;
-// Đọc giá trị timer1
-unsigned int tmr = TMR1L + TMR1H * 256;
 ```
 
 ### Các hàm trong thư viện timers.h
