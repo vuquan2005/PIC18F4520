@@ -1,5 +1,5 @@
 #include <P18f4520.h>
-#include <adc.h>
+#include <pwm.h>
 
 #pragma config OSC = HS
 #pragma config MCLRE = ON
