@@ -37,7 +37,7 @@ SetDCPWM2(dutycycle);
 
 Cách tính dutycycle:
 
-$$ dutycycle = \dfrac {F*{OSC}} {K} * T_{PWM} * PW $$
+$$ dutycycle = \dfrac {F_{OSC}} {K} * T_{PWM} * PW $$
 
 Trong đó:
 

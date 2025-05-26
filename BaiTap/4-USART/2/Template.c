@@ -9,12 +9,12 @@
 #pragma config WDT = OFF
 #pragma config MCLRE = ON
 #pragma config PBADEN = OFF
-// Config cần cho USART
+// Config cần cho USART, lấy ở trang 16 tài liệu tra cứu pic
 #pragma config PWRT = ON
 #pragma config BOREN = OFF
 #pragma config LVP = OFF
 
-unsigned char n = 0;
+char n = 0;
 char x, txt[10];
 
 #define PB PORTAbits.RA0
