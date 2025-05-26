@@ -2,6 +2,10 @@
 
 **PIC18F4520** tập hợp một số tài liệu, ví dụ, hướng dẫn về lập trình vi xử lý PIC18F4520 trong học phần `Vi xử lý và cấu trúc máy tính (FE6044 - HaUI)`
 
+## Phần Mềm
+
+Cài đặt MPLAB IDE v8.92 tại [đây](https://ww1.microchip.com/downloads/en/DeviceDoc/MPLAB_IDE_8_92.zip).
+
 ## [Tài liệu](Docs)
 
 Chứa tài liệu của học phần và hướng dẫn về lập trình vi điều khiển [🔍](Docs).
