@@ -1,3 +1,5 @@
+// Tạo xung PWM trên RC2/CCP1
+
 #include <P18f4520.h>
 #include <pwm.h>
 
