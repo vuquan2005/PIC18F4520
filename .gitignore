@@ -3,3 +3,5 @@
 *.pdsbak
 *.err
 *.mcs
+*.map
+*.cof
