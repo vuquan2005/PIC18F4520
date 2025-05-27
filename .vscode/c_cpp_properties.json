@@ -2,15 +2,20 @@
     "configurations": [
         {
             "name": "MCC18",
-            "includePath": ["${workspaceFolder}/**", "C:/MCC18/h"],
             "defines": ["__18F4520", "__MPLAB_C18__"],
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/MCC18/h",
+                "C:/MCC18/lib",
+                "C:/MCC18/cpp",
+                "C:/MCC18/libpopt"
+            ],
             "forcedInclude": ["C:/MCC18/h/p18f4520.h"],
             "intelliSenseMode": "windows-gcc-x64",
             "cStandard": "c89",
             "compilerPath": "C:/MCC18/bin/mcc18.exe",
             "browse": {
-                "path": ["C:/MCC18/h"],
-                "limitSymbolsToIncludedHeaders": false
+                "path": ["C:/MCC18/h"]
             }
         }
     ],
