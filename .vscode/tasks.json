@@ -48,8 +48,14 @@
         {
             "label": "Open Proteus",
             "type": "shell",
-            "command": "C:\\Program Files (x86)\\Labcenter Electronics\\Proteus 8 Professional\\BIN\\PDS.exe",
-            "args": ["${fileDirname}\\${fileBasenameNoExtension}.pdsprj"],
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\open-proteus.ps1",
+                "\"${fileDirname}\\${fileBasenameNoExtension}.pdsprj\""
+            ],
             "group": "build",
             "problemMatcher": [],
             "dependsOn": ["Link PIC18F4520"]
@@ -57,7 +63,6 @@
         {
             "label": "Build and Link PIC18F4520",
             "type": "shell",
-            "command": "echo.",
             "args": [],
             "dependsOn": ["Clean Up", "Open Proteus"],
             "group": {
