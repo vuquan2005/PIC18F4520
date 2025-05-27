@@ -1,0 +1,70 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build PIC18F4520",
+            "type": "shell",
+            "command": "mcc18",
+            "args": [
+                "-p=18f4520",
+                "\"${file}\"",
+                "-fo=\"${fileDirname}\\${fileBasenameNoExtension}.o\"",
+                "-I=\"C:\\MCC18\\h\"",
+                "-k"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Link PIC18F4520",
+            "type": "shell",
+            "command": "mplink",
+            "args": [
+                "\"${fileDirname}\\${fileBasenameNoExtension}.o\"",
+                "/l\"C:\\MCC18\\lib\"",
+                "\"C:\\MCC18\\lkr\\18f4520.lkr\"",
+                "/m\"${fileDirname}\\${fileBasenameNoExtension}.map\"",
+                "/o\"${fileDirname}\\${fileBasenameNoExtension}.hex\""
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": ["Build PIC18F4520"]
+        },
+        {
+            "label": "Clean Up",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "del /Q \"${fileDirname}\\*.o\" \"${fileDirname}\\*.err\" \"${fileDirname}\\*.mcs\" \"${fileDirname}\\*.map\" \"${fileDirname}\\*.cof\" \"${fileDirname}\\*.lst\" \"${fileDirname}\\*.cod\""
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": ["Open Proteus"]
+        },
+        {
+            "label": "Open Proteus",
+            "type": "shell",
+            "command": "C:\\Program Files (x86)\\Labcenter Electronics\\Proteus 8 Professional\\BIN\\PDS.exe",
+            "args": ["${fileDirname}\\${fileBasenameNoExtension}.pdsprj"],
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": ["Link PIC18F4520"]
+        },
+        {
+            "label": "Build and Link PIC18F4520",
+            "type": "shell",
+            "command": "echo.",
+            "args": [],
+            "dependsOn": ["Clean Up", "Open Proteus"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
