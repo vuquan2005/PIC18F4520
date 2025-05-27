@@ -1,3 +1,5 @@
+// Đếm số lân nhấn nút và hiển thị lên 2 led 7 đoạn, dừng đếm khi nhấn nút quá 10 lần, reset khi nhấn nút
+
 #include <p18f4520.h>
 #include <delays.h>
 #include <timers.h>
@@ -25,7 +27,10 @@ void main(void)
     while (1)
     {
         if (PORTBbits.RB0 == 0)
+        {
             TMR3L = 0; // nếu nhấn nút thì reset số lần nhấn
+            T3CONbits.TMR3ON = 1;
+        }
 
         TMR3L;
         if (TMR3L >= 10)
