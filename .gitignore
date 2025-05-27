@@ -5,5 +5,7 @@
 *.mcs
 *.map
 *.cof
+*.lst
+*.cod
 *.mcw
 !Template/*.mcw
