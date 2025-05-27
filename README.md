@@ -16,4 +16,4 @@ Mẫu project cho lập trình vi điều khiển [🔍](Template).
 
 ## [Bài tập](BaiTap/BaiTap.md)
 
-Một số bài tập với vi điều khiển PIC18F4520 [🔍](BaiTap/BaiTap.md).
+Một số bài tập với vi điều khiển PIC18F4520 [🔍](BaiTap.md).
