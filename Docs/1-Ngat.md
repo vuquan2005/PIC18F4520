@@ -42,9 +42,14 @@ Mẫu sử dụng ngắt thực tế xem [ở đây 📖](#-sử-dụng).
 ### Chung
 
 ```c
-INTCONbits.GIE = 1;  // Cho phép ngắt toàn cục
-INTCONbits.PEIE = 1; // Chưa hiểu cách dùng lắm =))
-// INTCONbits.GIEL =1; // Dùng khi ngắt timer, không dùng PEIE (lý do không biết:D)
+// Cho phép ngắt toàn cục
+INTCONbits.GIE = 1;
+// Cho phép ưu tiên ngắt 
+RCONbits.IPEN = 1;
+// Cho phép ngắt ngoại vi (ngắt USART, ADC, PWM,...)
+// INTCONbits.PEIE = 1;
+// Dùng khi ngắt timer, không dùng PEIE (lý do không biết:D)
+// INTCONbits.GIEL =1; 
 ```
 
 ### INT0
@@ -63,8 +68,8 @@ INTCON3bits.INT1IE = 1;	 // Cho phép ngắt ngoài INT1
 INTCON2bits.INTEDG1 = 0; // Ngắt sườn âm
 INTCON3bits.INT1IF = 0;	 // Xoá cờ ngắt INT1
 // Nếu có ưu tiên
-// INTCON3bits.TMR1IP = 1; // Ưu tiên cao
-// INTCON3bits.TMR1IP = 0; // Ưu tiên thấp
+// INTCON3bits.INT1IP = 1; // Ưu tiên cao
+// INTCON3bits.INT1IP = 0; // Ưu tiên thấp
 ```
 
 ### INT2
@@ -74,8 +79,8 @@ INTCON3bits.INT2IE = 1;	 // Cho phép ngắt ngoài INT2
 INTCON2bits.INTEDG2 = 0; // Ngắt sườn âm
 INTCON3bits.INT2IF = 0;	 // Xoá cờ ngắt INT2
 // Nếu có ưu tiên
-// INTCON3bits.TMR2IP = 1; // Ưu tiên cao
-// INTCON3bits.TMR2IP = 0; // Ưu tiên thấp
+// INTCON3bits.INT2IP = 1; // Ưu tiên cao
+// INTCON3bits.INT2IP = 0; // Ưu tiên thấp
 ```
 
 ### Mẫu ngắt
