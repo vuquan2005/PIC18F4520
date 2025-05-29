@@ -19,7 +19,7 @@ OpenPWM2(period);
 
 Cách tính giá trị period:
 
-$$ period = \dfrac {F_{OSC}} {4*K} * {T_{PWM}} -1 $$
+$$ period = \dfrac {F*{OSC}} {4*K} _ {T_{PWM}} -1 $$
 
 Trong đó:
 
@@ -37,7 +37,7 @@ SetDCPWM2(dutycycle);
 
 Cách tính dutycycle:
 
-$$ dutycycle = \dfrac {F_{OSC}} {K} * T_{PWM} * PW $$
+$$ dutycycle = \dfrac {F*{OSC}} {K} \* T*{PWM} \* PW $$
 
 Trong đó:
 
@@ -64,16 +64,39 @@ ClosePWM2();
 void main (void)
 {
     ADCON1 = 0x0f;
-    
+
 	TRISC=0;
     // Hệ số chia tần TMR2 = 16
-	T2CONbits.T2CKPS1=1;  
+	T2CONbits.T2CKPS1=1;
 	T2CONbits.T2CKPS0=1;
-    // Tần số xung 1000Hz
+	// Có thể dùng hàm OpenTimer2
+	// OpenTimer2(T2_PS_1_16)
+
+    // Tần số xung 1000Hz, Fosc = 8MHz
 	OpenPWM1(124);
-    // Độ rộng xung dương 100%
-	// SetDCPWM1(500);
-    // Độ rộng xung dương 50%
-	SetDCPWM1(250);
+
+	// Ban đầu khi chưa nhấn
+	// Độ rộng xung dương 25%
+	SetDCPWM1(125);
+
+	while (1)
+	{
+		while (PORTBbits.RB0 == 0)
+			;
+		while (PORTBbits.RB0 == 1)
+			;
+		// Nhấn 1 lần
+		// Độ rộng xung dương 50%
+		SetDCPWM1(250);
+		while (PORTBbits.RB0 == 0)
+			;
+		while (PORTBbits.RB0 == 1)
+			;
+		// Nhấn 2 lần
+		// Độ rộng xung dương 100%
+		SetDCPWM1(500);
+		
+		// Lặp lại, đợi nút nhấn rồi về xung 50% bên trên
+	}
 }
 ```
