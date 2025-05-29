@@ -2,7 +2,7 @@
 
 #include <P18f4520.h>
 #include <pwm.h>
-#include <timers.h>
+// #include <timers.h>
 
 #pragma config OSC = HS
 #pragma config MCLRE = ON
