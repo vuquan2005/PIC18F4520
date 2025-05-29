@@ -19,6 +19,10 @@ void main(void)
 	T2CONbits.T2CKPS0 = 1;
 	// Tạo xung PWM ở chân RC1/CCP2B => sử dụng PWM2
 	OpenPWM2(149);
+
+	// Khi bắt đầu, chưa nhấn nút Tạo xung on = off
+	SetDCPWM2(300);
+
 	while (1)
 	{
 		while (PORTBbits.RB0 == 0)

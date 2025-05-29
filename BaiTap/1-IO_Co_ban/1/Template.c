@@ -26,13 +26,13 @@ void main(void)
 
     while (1)
     {
+		// Nút reset
         if (PORTBbits.RB0 == 0)
         {
             TMR3L = 0; // nếu nhấn nút thì reset số lần nhấn
             T3CONbits.TMR3ON = 1;
         }
 
-        TMR3L;
         if (TMR3L >= 10)
             T3CONbits.TMR3ON = 0; // tắt timer 3 nếu lớn hơn 10
 
