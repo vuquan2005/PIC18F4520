@@ -9,7 +9,7 @@
                 "-ExecutionPolicy",
                 "Bypass",
                 "-Command",
-                "mcc18 -p=18f4520 \"${file}\" -fo=\"${fileDirname}\\${fileBasenameNoExtension}.o\" -I=\"C:\\MCC18\\h\" -k; if ($?) { Write-Host 'Build completed successfully!' -ForegroundColor Green } else { Write-Host 'Build failed! Check the error code above! ^^^' -ForegroundColor Red; exit 1 }"
+                "mcc18 -p=18f4520 \"${file}\" -fo=\"${fileDirname}\\${fileBasenameNoExtension}.o\" -I=\"C:\\MCC18\\h\" -k; if ($?) { Write-Host “Building... :${fileDirname}\\${fileBasenameNoExtension}.” -ForegroundColor Yellow ; Write-Host 'Build completed successfully!' -ForegroundColor Green } else { Write-Host 'Build failed! Check the error code above! ^^^' -ForegroundColor Red; exit 1 }"
             ],
             "group": "build",
             "problemMatcher": {
