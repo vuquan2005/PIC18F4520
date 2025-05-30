@@ -1,11 +1,11 @@
-*.o
-*.workspace
-*.pdsbak
 *.err
-*.mcs
+*.o
 *.map
-*.cof
 *.lst
 *.cod
+*.cof
+*.workspace
+*.pdsbak
+*.mcs
 *.mcw
 !Template/*.mcw
