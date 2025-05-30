@@ -8,7 +8,8 @@
             "program": "cmd.exe",
             "args": ["/C", "exit"],
             "console": "internalConsole",
-            "preLaunchTask": "Build and Link PIC18F4520"
+            "preLaunchTask": "Build, Link and Run Proteus",
+			"cwd": "${workspaceFolder}"
         }
     ]
 }
