@@ -1,5 +1,10 @@
+param (
+    [string]$projectFile = "", # Tham số cho file dự án
+    [switch]$forceNewInstance = $false # Tham số để quyết định mở instance mới
+)
+
+# Đường dẫn đến file thực thi của Proteus
 $proteusPath = "C:\Program Files (x86)\Labcenter Electronics\Proteus 8 Professional\BIN\PDS.exe"
-$projectFile = $args[0]
 
 # Kiểm tra xem Proteus có tồn tại không
 if (-Not (Test-Path $proteusPath)) {

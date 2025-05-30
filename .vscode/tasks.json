@@ -112,6 +112,49 @@
             },
             "dependsOn": ["Clean Up"],
             "problemMatcher": []
+        },
+        {
+            "label": "Run Proteus",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\open-proteus.ps1",
+                "\"${fileDirname}\\${fileBasenameNoExtension}.pdsprj\"",
+                "-forceNewInstance"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Open with MPLab",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\open-with-mplab-ide.ps1",
+                "\"${fileDirname}\\${fileBasenameNoExtension}.mcp\""
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            }
         }
     ]
 }
