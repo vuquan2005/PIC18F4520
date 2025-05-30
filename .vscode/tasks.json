@@ -4,46 +4,63 @@
         {
             "label": "Build PIC18F4520",
             "type": "shell",
-            "command": "mcc18",
+            "command": "powershell",
             "args": [
-                "-p=18f4520",
-                "\"${file}\"",
-                "-fo=\"${fileDirname}\\${fileBasenameNoExtension}.o\"",
-                "-I=\"C:\\MCC18\\h\"",
-                "-k"
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "mcc18 -p=18f4520 \"${file}\" -fo=\"${fileDirname}\\${fileBasenameNoExtension}.o\" -I=\"C:\\MCC18\\h\" -k; if ($?) { Write-Host 'Build completed successfully!' -ForegroundColor Green } else { Write-Host 'Build failed! Check the error code above! ^^^' -ForegroundColor Red; exit 1 }"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "group": "build",
+            "problemMatcher": {
+                "owner": "mcc18",
+                "fileLocation": ["relative", "${fileDirname}"],
+                "pattern": {
+                    "regexp": "^(.*)\\((\\d+)\\) : (ERROR|WARNING) (.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
             },
-            "problemMatcher": []
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            }
         },
         {
             "label": "Link PIC18F4520",
             "type": "shell",
-            "command": "mplink",
+            "command": "powershell",
             "args": [
-                "\"${fileDirname}\\${fileBasenameNoExtension}.o\"",
-                "/l\"C:\\MCC18\\lib\"",
-                "\"C:\\MCC18\\lkr\\18f4520.lkr\"",
-                "/m\"${fileDirname}\\${fileBasenameNoExtension}.map\"",
-                "/o\"${fileDirname}\\${fileBasenameNoExtension}.hex\""
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "mplink \"${fileDirname}\\${fileBasenameNoExtension}.o\" /l\"C:\\MCC18\\lib\" \"C:\\MCC18\\lkr\\18f4520.lkr\" /m\"${fileDirname}\\${fileBasenameNoExtension}.map\" /o\"${fileDirname}\\${fileBasenameNoExtension}.hex\" /v; if ($?) { Write-Host 'Link completed successfully!' -ForegroundColor Green } else { Write-Host 'Link failed!' -ForegroundColor Red }"
             ],
             "group": "build",
-            "problemMatcher": [],
+            "problemMatcher": {
+                "owner": "mplink",
+                "fileLocation": ["relative", "${fileDirname}"],
+                "pattern": {
+                    "regexp": "^(.*)\\((\\d+)\\) : (ERROR|WARNING) (.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false
+            },
             "dependsOn": ["Build PIC18F4520"]
-        },
-        {
-            "label": "Clean Up",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/C",
-                "del /Q \"${fileDirname}\\*.o\" \"${fileDirname}\\*.err\" \"${fileDirname}\\*.mcs\" \"${fileDirname}\\*.map\" \"${fileDirname}\\*.cof\" \"${fileDirname}\\*.lst\" \"${fileDirname}\\*.cod\""
-            ],
-            "group": "build",
-            "problemMatcher": [],
-            "dependsOn": ["Open Proteus"]
         },
         {
             "label": "Open Proteus",
@@ -58,17 +75,42 @@
             ],
             "group": "build",
             "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            },
             "dependsOn": ["Link PIC18F4520"]
         },
         {
-            "label": "Build and Link PIC18F4520",
+            "label": "Clean Up",
             "type": "shell",
-            "args": [],
-            "dependsOn": ["Clean Up", "Open Proteus"],
+            "command": "cmd",
+            "args": [
+                "/C",
+                "del /Q \"${fileDirname}\\*.o\" \"${fileDirname}\\*.map\" \"${fileDirname}\\*.lst\" \"${fileDirname}\\*.cod\" \"${fileDirname}\\*.mcs\" \"${fileDirname}\\*.pdsbak\" \"${fileDirname}\\*.workspace\" \"${fileDirname}\\*.err\" && echo Clean up all file *.o, *.map, *.lst, *.cod, *.mcs, *.pdsbak, *.workspace, *.err && echo If you want to keep it, please remove it from the tasks.json file or comment it out.",
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false
+            },
+            "dependsOn": ["Open Proteus"]
+        },
+        {
+            "label": "Build, Link and Run Proteus",
+            "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "dependsOn": ["Clean Up"],
             "problemMatcher": []
         }
     ]

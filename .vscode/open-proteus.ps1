@@ -24,5 +24,4 @@ catch {
     } else {
         Write-Host "Error when opening Proteus: $($_.Exception.Message)" -ForegroundColor Red
     }
-    exit 1
 }
