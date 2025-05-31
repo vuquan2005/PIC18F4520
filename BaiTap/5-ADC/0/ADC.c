@@ -12,9 +12,9 @@ void main(void)
 	ADCON1 = 0x0f;
 	TRISC = 0;
 	TRISD = 0;
-	TRISEbits.TRISE0 = 1;
-	TRISAbits.TRISA0 = 1;
-	TRISBbits.TRISB7 = 1;
+	TRISEbits.RE0 = 1;
+	TRISAbits.RA0 = 1;
+	TRISBbits.RB7 = 1;
 
 	OpenADC(ADC_FOSC_4 & ADC_RIGHT_JUST & ADC_2_TAD,
 			ADC_CH0 & ADC_INT_OFF & ADC_VREFPLUS_VDD & ADC_VREFMINUS_VSS,

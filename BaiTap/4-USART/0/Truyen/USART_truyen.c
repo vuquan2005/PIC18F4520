@@ -38,9 +38,9 @@ void main()
 	INTCON2bits.INTEDG0 = 0;
 	INTCONbits.INT0IF = 0;
     //
-    TRISCbits.TRISC6 = 0;
-    TRISBbits.TRISB0 = 1;
-    TRISBbits.TRISB7 = 1;
+    TRISCbits.RC6 = 0;
+    TRISBbits.RB0 = 1;
+    TRISBbits.RB7 = 1;
     TRISD = 0;
     OpenUSART(USART_TX_INT_ON & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_CONT_RX & USART_BRGH_HIGH, 51);
     while (1)
