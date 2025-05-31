@@ -65,11 +65,27 @@ Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào tim
 
 Nếu N < 0 (t > 65536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
 
-$$ F_{in} = \dfrac{F_{OSC}} {4 * K} $$
+Tần số vào timer:
 
-$$ T = \dfrac{tc * 4 * K} {F_{OSC}} $$
+$$ F_{in} = \dfrac{Fosc} {4 * K} $$
 
-$$ tc = \dfrac{T_{Fosc}} {4 * K} $$
+Tần số xung đầu ra:
+
+$$ F = \dfrac{Fosc} {4 * K * tc} $$
+
+Thời gian tràn timer (chu kỳ tràn):
+
+$$ T = \dfrac{4 * K * tc} {Fosc} $$
+
+Biến đổi ta có `giá trị timer cần đếm cho đến khi tràn:`
+
+$$ tc = \dfrac{Fosc} {4 * K} * T $$
+
+Hoặc: 
+
+$$ tc = \dfrac{Fosc} {4 * K} * \dfrac 1 F $$
+
+Giá trị nạp vào timer:
 
 $$ N = 2^n - tc + 1 $$
 
@@ -82,21 +98,34 @@ Với:
 -   N: giá trị khởi đầu (nạp vào timer)
 -   tc: số giá trị timer cần đếm cho đến khi tràn
 
-Ví dụ: `Tính giá trị nạp vào timer để timer0 tràn trong 100us.`
+Ví dụ: `Tính giá trị nạp vào timer để timer0 tràn trong 100ms, Fosc  4MHz.`
 
+$$ tc = \dfrac{Fosc} {4 * K} * T = \dfrac{4 * 10^3} {4 * 1} * 100*10^{-6} = 100 000 > 65536$$
 
+Vì 100 000 > 65 536 nên ta tăng hệ số chia tần lên 2 (tuỳ timer có hay không có hệ số chia tần 1:2. Nếu không có, có thể chọn hệ số lớn hơn):
+
+$$ tc = \dfrac{4 * 10^6} {4 * 2} * 100*10^{-3} = 50000 < 65536$$
+
+Nạp vào timer:
+
+```c
+TMR1H = (65536 - 50000) / 256;
+TMR1L = (65536 - 50000) % 256;
+// Nếu dùng timers.h
+WriteTimer1(65536 - 50000);
+```
 
 ### Đọc/ghi timer
 
 ```c
 // Ghi vào timer1
-TMR1H = (65536 - tc + 1) / 256;
-TMR1L = (65536 - tc + 1) % 256;
+TMR1H = (65536 - tc) / 256;
+TMR1L = (65536 - tc) % 256;
 // Đọc giá trị timer1
 unsigned int tmr = TMR1L + TMR1H * 256;
 
 // Ghi bằng timers.h
-WriteTimer1(65536 - tc + 1);
+WriteTimer1(65536 - tc);
 ```
 
 ### Bật/tắt timer
@@ -155,7 +184,7 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
     // Hàm sử dụng để cấm hoạt động của timer
     CloseTimer1();
     // Hàm sử dụng để ghi giá trị vào timer
-    WriteTimer1(65536 - tc + 1);
+    WriteTimer1(65536 - tc);
 }
 ```
 ### Mẫu Timer 
