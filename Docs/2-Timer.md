@@ -100,7 +100,7 @@ Với:
 
 Ví dụ: `Tính giá trị nạp vào timer để timer0 tràn trong 100ms, Fosc  4MHz.`
 
-$$ tc = \dfrac{Fosc} {4 * K} * T = \dfrac{4 * 10^3} {4 * 1} * 100*10^{-6} = 100 000 > 65536$$
+$$ tc = \dfrac{Fosc} {4 * K} * T = \dfrac{4 * 10^3} {4 * 1} * 100*10^{-3} = 100 000 > 65536$$
 
 Vì 100 000 > 65 536 nên ta tăng hệ số chia tần lên 2 (tuỳ timer có hay không có hệ số chia tần 1:2. Nếu không có, có thể chọn hệ số lớn hơn):
 
