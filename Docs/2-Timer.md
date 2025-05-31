@@ -65,11 +65,11 @@ Từ yêu cầu T hoặc F đầu bài, ta tính toán giá trị nạp vào tim
 
 Nếu N < 0 (t > 65536 (16bit) hoặc t > 256 (8bit)), thì ta tăng hệ số chia tần cho đến khi đạt yêu cầu.
 
-$$ F_{in} = \dfrac{Fosc} {4*K} $$
+$$ F_{in} = \dfrac{F_{OSC}} {4*K} $$
 
-$$ T = \dfrac{tc*4*K} {Fosc} $$
+$$ T = \dfrac{tc*4*K} {F_{OSC}} $$
 
-$$ tc = \dfrac{T*Fosc} {4*K} $$
+$$ tc = \dfrac{T_{Fosc}} {4*K} $$
 
 $$ N = 2^n - tc + 1 $$
 
@@ -81,6 +81,10 @@ Với:
 -   K: hệ số chia tần
 -   N: giá trị khởi đầu (nạp vào timer)
 -   tc: số giá trị timer cần đếm cho đến khi tràn
+
+Ví dụ: `Tính giá trị nạp vào timer để timer0 tràn trong 100us.`
+
+
 
 ### Đọc/ghi timer
 
