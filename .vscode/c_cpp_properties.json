@@ -6,12 +6,10 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/MCC18/h",
-                "C:/MCC18/lib",
-                "C:/MCC18/cpp",
-                "C:/MCC18/libpopt"
+                "C:/MCC18/lib"
             ],
             "forcedInclude": ["C:/MCC18/h/p18f4520.h"],
-            "intelliSenseMode": "windows-msvc-x64",
+            "intelliSenseMode": "windows-gcc-x64",
             "cStandard": "c89",
             "compilerPath": "C:/MCC18/bin/mcc18.exe",
             "browse": {
