@@ -63,7 +63,7 @@
             "dependsOn": ["Build PIC18F4520"]
         },
         {
-            "label": "Open Proteus",
+            "label": "Run Proteus",
             "type": "shell",
             "command": "powershell",
             "args": [
@@ -101,7 +101,7 @@
                 "panel": "shared",
                 "showReuseMessage": false
             },
-            "dependsOn": ["Open Proteus"]
+            "dependsOn": ["Run Proteus"]
         },
         {
             "label": "Build, Link and Run Proteus",
@@ -114,7 +114,7 @@
             "problemMatcher": []
         },
         {
-            "label": "Run Proteus",
+            "label": "Open Proteus",
             "type": "shell",
             "command": "powershell",
             "args": [
@@ -136,7 +136,7 @@
             }
         },
         {
-            "label": "Open with MPLab",
+            "label": "Open MPLab",
             "type": "shell",
             "command": "powershell",
             "args": [
