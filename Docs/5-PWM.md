@@ -19,11 +19,11 @@ OpenPWM2(period);
 
 Cách tính giá trị period:
 
-$$ period = \dfrac {F*{OSC}} {4*K} * {T_{PWM}} -1 $$
+$$ period = \dfrac {Fosc} {4*K} * {T_{PWM}} -1 $$
 
 Trong đó:
 
--   $T_{PWM}$ : là chu kỳ của xung tạo ra
+-   $T_{PWM}$ : là chu kỳ của xung PWM
 -   $K$ : hệ số chia tần timer2 (1:1, 1:4, 1:16)
 
 $period$ : thoả mãn khi $period < 255 $, nếu không thoả mãn tăng $K$.
@@ -37,11 +37,19 @@ SetDCPWM2(dutycycle);
 
 Cách tính dutycycle:
 
-$$ dutycycle = \dfrac {F_{OSC}} {K} * T_{PWM} * PW $$
+$$ dutycycle = \dfrac {Fosc} {K} * T_{PWM} * T_{on} $$
 
 Trong đó:
 
--   $PW$ : tỷ lệ độ rộng xung dương so với xung $T_{PWM}$. VD: 70%.
+-   $T_{on}$ : tỷ lệ độ rộng xung dương so với xung $T_{PWM}$ ($T_{on}$).
+
+Ví dụ:
+
+$T_{on} = 50\% = 0.5$
+
+$ T_{on} = \dfrac 3 7 * T_{off} = 30\% = 0.3$. 
+
+Vì: $T_{on} + T_{off} = 1$
 
 #### ClosePWM
 
