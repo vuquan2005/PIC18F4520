@@ -1,0 +1,21 @@
+// Thêm vào Keyboard Shortcuts (JSON) | User: keybindings.json
+[
+  {
+    "key": "f5",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Build, Link and Run Proteus",
+    "workspaceKeybindings.reMapKeybindingsForMCC18.enabled": true
+  },
+  {
+    "key": "shift+f5",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Open MPLab",
+    "workspaceKeybindings.reMapKeybindingsForMCC18.enabled": true
+  },
+  {
+    "key": "f10",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Open Proteus",
+    "workspaceKeybindings.reMapKeybindingsForMCC18.enabled": true
+  }
+]
