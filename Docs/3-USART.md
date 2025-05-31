@@ -142,8 +142,8 @@ void main()
     char kyTu;
     ADCON1 = 0x0F;
     // Khai báo chân TX ra, RX vào
-    TRISCbits.TRISC6 = 0;
-    TRISCbits.TRISC7 = 1;
+    TRISCbits.RC6 = 0;
+    TRISCbits.RC7 = 1;
     
     OpenUSART( config, spbrg);
 
