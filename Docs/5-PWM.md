@@ -19,7 +19,7 @@ OpenPWM2(period);
 
 Cách tính giá trị period:
 
-$$ period = \dfrac {F*{OSC}} {4*K} _ {T_{PWM}} -1 $$
+$$ period = \dfrac {F*{OSC}} {4*K} * {T_{PWM}} -1 $$
 
 Trong đó:
 
@@ -37,7 +37,7 @@ SetDCPWM2(dutycycle);
 
 Cách tính dutycycle:
 
-$$ dutycycle = \dfrac {F*{OSC}} {K} \* T*{PWM} \* PW $$
+$$ dutycycle = \dfrac {F_{OSC}} {K} * T_{PWM} * PW $$
 
 Trong đó:
 
