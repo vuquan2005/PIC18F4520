@@ -24,6 +24,8 @@ void main(void)
     // Khai báo các PORT
     TRISA = 0; // PORTA là đầu ra tín hiệu
     TRISB = 1; // PORTB là đầu vào tín hiệu
+	TRISAbits.TRISA0 = 1; // Khai báo chân RA0 là tín hiệu vào, không ảnh hưởng đến các chân khác
+	TRISBbits.TRISB0 = 1; // Khai báo chân RB0 là tín hiệu ra, không ảnh hưởng đến các chân khác
 
     // Đưa chương trình vào vòng lặp
     while (1)
