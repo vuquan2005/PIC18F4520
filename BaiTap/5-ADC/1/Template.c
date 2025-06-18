@@ -14,7 +14,7 @@ void main(void)
 	ADCON1 = 0x0f;
 	TRISD = 0;
 	TRISC = 0;
-	TRISE = 0;
+	TRISEbits.RE1 = 0;
 	TRISAbits.RA5 = 1;
 
 	OpenADC(ADC_FOSC_2 &
