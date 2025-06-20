@@ -39,7 +39,7 @@
                 "-ExecutionPolicy",
                 "Bypass",
                 "-Command",
-                "mplink \"${fileDirname}\\${fileBasenameNoExtension}.o\" /l\"C:\\MCC18\\lib\" \"C:\\MCC18\\lkr\\18f4520.lkr\" /m\"${fileDirname}\\${fileBasenameNoExtension}.map\" /o\"${fileDirname}\\${fileBasenameNoExtension}.hex\" /v; if ($?) { Write-Host 'Link completed successfully!' -ForegroundColor Green } else { Write-Host 'Link failed!' -ForegroundColor Red }"
+                "mplink \"${fileDirname}\\${fileBasenameNoExtension}.o\" /l\"C:\\MCC18\\lib\" \"C:\\MCC18\\lkr\\18f4520.lkr\" /o\"${fileDirname}\\${fileBasenameNoExtension}.cof\"; if ($?) { Write-Host 'Link completed successfully!' -ForegroundColor Green } else { Write-Host 'Link failed!' -ForegroundColor Red }"
             ],
             "group": "build",
             "problemMatcher": {
