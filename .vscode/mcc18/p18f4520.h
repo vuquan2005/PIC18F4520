@@ -181,10 +181,10 @@ union
 	struct
 	{
 		unsigned RBIF : 1;
-		unsigned INT0F : 1;
+		unsigned INT0IF : 1;
 		unsigned TMR0IF : 1;
 		unsigned RBIE : 1;
-		unsigned INT0E : 1;
+		unsigned INT0IE : 1;
 		unsigned TMR0IE : 1;
 		unsigned PEIE : 1;
 		unsigned GIE : 1;
