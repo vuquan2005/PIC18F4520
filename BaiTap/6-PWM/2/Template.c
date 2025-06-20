@@ -1,6 +1,6 @@
 // Tạo xung PWM ở chân RC1 T=1200us, 8MHz, xung theo số lần nhấn nút RB0
 
-#include <P18f4520.h>
+#include <p18f4520.h>
 #include <pwm.h>
 
 #pragma config OSC = HS

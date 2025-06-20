@@ -1,4 +1,4 @@
-#include <P18f4520.h>
+#include <p18f4520.h>
 #include <adc.h>
 
 #pragma config OSC = HS

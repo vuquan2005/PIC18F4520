@@ -61,7 +61,7 @@ ClosePWM2();
 ### Mẫu PWM
 
 ```c
-#include <P18f4520.h>
+#include <p18f4520.h>
 #include <pwm.h>
 
 #pragma config OSC = HS

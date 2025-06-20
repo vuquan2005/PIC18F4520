@@ -74,7 +74,7 @@ $$ D = \dfrac {V_{in}} {5} * (2^n - 1) $$
 ### Mẫu ADC
 
 ```c
-#include <P18f4520.h>
+#include <p18f4520.h>
 #include <adc.h>
 
 #pragma config OSC = HS
