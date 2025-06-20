@@ -11,32 +11,31 @@ void main(void)
 	ADCON1 = 0x0f;
 	TRISD = 0b00000010;
 
+	while (PORTDbits.RD1 == 1)
+		;
+	while (PORTDbits.RD1 == 0)
+		;
+	PORTD = 0b00010000;
+	while (PORTDbits.RD1 == 1)
+		;
+	while (PORTDbits.RD1 == 0)
+		;
+	PORTD = 0b00100000;
+	while (PORTDbits.RD1 == 1)
+		;
+	while (PORTDbits.RD1 == 0)
+		;
+	PORTD = 0b01000000;
+	while (PORTDbits.RD1 == 1)
+		;
+	while (PORTDbits.RD1 == 0)
+		;
+	PORTD = 0b10000000;
+	while (PORTDbits.RD1 == 1)
+		;
+	while (PORTDbits.RD1 == 0)
+		;
+	PORTD = 0b11110000;
 	while (1)
-	{
-		while (PORTDbits.RD1 == 1)
-			;
-		while (PORTDbits.RD1 == 0)
-			;
-		PORTD = 0b00010000;
-		while (PORTDbits.RD1 == 1)
-			;
-		while (PORTDbits.RD1 == 0)
-			;
-		PORTD = 0b00100000;
-		while (PORTDbits.RD1 == 1)
-			;
-		while (PORTDbits.RD1 == 0)
-			;
-		PORTD = 0b01000000;
-		while (PORTDbits.RD1 == 1)
-			;
-		while (PORTDbits.RD1 == 0)
-			;
-		PORTD = 0b10000000;
-		while (PORTDbits.RD1 == 1)
-			;
-		while (PORTDbits.RD1 == 0)
-			;
-		PORTD = 0b11110000;
-	}
+		;
 }
