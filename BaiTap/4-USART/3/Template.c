@@ -35,7 +35,7 @@ void main()
 	while (1)
 	{
 		while (BusyUSART())
-		;
+			;
 		n = ReadUSART();
 		PORTD = n;
 	}
