@@ -90,7 +90,7 @@
             "command": "cmd",
             "args": [
                 "/C",
-                "del /Q \"${fileDirname}\\*.o\" \"${fileDirname}\\*.map\" \"${fileDirname}\\*.lst\" \"${fileDirname}\\*.cod\" \"${fileDirname}\\*.mcs\" \"${fileDirname}\\*.pdsbak\" \"${fileDirname}\\*.workspace\" \"${fileDirname}\\*.err\" && echo Clean up all file *.o, *.map, *.lst, *.cod, *.mcs, *.pdsbak, *.workspace, *.err && echo If you want to keep it, please remove it from the tasks.json file or comment it out.",
+                "del /Q \"${fileDirname}\\*.o\" \"${fileDirname}\\*.map\" \"${fileDirname}\\*.lst\" \"${fileDirname}\\*.cod\" \"${fileDirname}\\*.mcs\" \"${fileDirname}\\*.pdsbak\" \"${fileDirname}\\*.workspace\" \"${fileDirname}\\*.err\" && echo Clean up all file *.o, *.map, *.lst, *.cod, *.mcs, *.pdsbak, *.workspace, *.err && echo If you want to keep it, please remove it from the tasks.json file or comment it out."
             ],
             "group": "build",
             "problemMatcher": [],
