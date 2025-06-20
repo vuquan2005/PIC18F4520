@@ -2,18 +2,18 @@
     "configurations": [
         {
             "name": "MCC18",
-            "defines": ["__18F4520", "__MPLAB_C18__", "near=", "unsigned short long=unsigned long"],
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/MCC18/h",
-                "C:/MCC18/lib"
-            ],
-            "forcedInclude": ["C:/MCC18/h/p18f4520.h"],
-            "intelliSenseMode": "windows-gcc-x64",
+            "includePath": ["${workspaceFolder}/**", "${workspaceFolder}/.vscode/mcc18"],
+            "forcedInclude": ["${workspaceFolder}/.vscode/mcc18/p18f4520.h"],
+            "defines": ["__18F4520", "_MCC18=1", "__MCC18", "__MPLAB_C18__"],
+            "compilerPath": "",
+            "compilerArgs": ["-fpermissive", "-fno-strict-aliasing"],
             "cStandard": "c89",
-            "compilerPath": "C:/MCC18/bin/mcc18.exe",
-            "browse": {
-                "path": ["C:/MCC18/h"]
+            "intelliSenseMode": "gcc-x86",
+			"browse": {
+                "path": [
+                    "${workspaceFolder}/.vscode/mcc18"
+                ],
+                "limitSymbolsToIncludedHeaders": true
             }
         }
     ],
