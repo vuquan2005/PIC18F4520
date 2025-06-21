@@ -2,12 +2,12 @@
 
 Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 
--   [Nguồn xung](#nguồn-xung)
--   [Chọn hệ số chia tần](#chọn-hệ-số-chia-tần)
--   [Cờ tràn](#cờ-tràn)
--   [Ngắt timer](#ngắt-timer)
--   [Đọc ghi timer](#đọcghi-timer)
--   [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
+- [Nguồn xung](#nguồn-xung)
+- [Chọn hệ số chia tần](#chọn-hệ-số-chia-tần)
+- [Cờ tràn](#cờ-tràn)
+- [Ngắt timer](#ngắt-timer)
+- [Đọc ghi timer](#đọcghi-timer)
+- [Hàm trong timers.h](#các-hàm-trong-thư-viện-timersh)
 
 ## ✏️ Thanh ghi
 
@@ -19,9 +19,9 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 | ------ | ------ | ---- | ---- | --- | ----- | ----- | ----- |
 | 7️⃣     | 6️⃣     | 5️⃣   | 4️⃣   | 3️⃣  | 2️⃣    | 1️⃣    | 0️⃣    |
 
--   Thanh ghi chứa byte thấp của Timer0: TMR0L (8 bit, không định địa chỉ bit)
--   Thanh ghi chứa byte cao của Timer0: TMR0H (8 bit, không định địa chỉ bit)
--   Thanh ghi điều khiển ngắt : [INTCON](1-Ngat.md##intcon)
+- Thanh ghi chứa byte thấp của Timer0: TMR0L (8 bit, không định địa chỉ bit)
+- Thanh ghi chứa byte cao của Timer0: TMR0H (8 bit, không định địa chỉ bit)
+- Thanh ghi điều khiển ngắt : [INTCON](1-Ngat.md##intcon)
 
 #### [T1CON](#T1CON-1)
 
@@ -29,8 +29,8 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 | ---- | ----- | ------- | ------- | ------- | ------ | ------ | ------ |
 | 7️⃣   | 6️⃣    | 5️⃣      | 4️⃣      | 3️⃣      | 2️⃣     | 1️⃣     | 0️⃣     |
 
--   Thanh ghi chứa giá tri đếm byte thấp của Timer1: TMR1L
--   Thanh ghi chứa giá tri đếm byte cao của Timer1: TMR1H
+- Thanh ghi chứa giá tri đếm byte thấp của Timer1: TMR1L
+- Thanh ghi chứa giá tri đếm byte cao của Timer1: TMR1H
 
 #### [T2CON](#T2CON-1)
 
@@ -38,8 +38,8 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 | --- | -------- | -------- | -------- | -------- | ------ | ------- | ------- |
 | 7️⃣  | 6️⃣       | 5️⃣       | 4️⃣       | 3️⃣       | 2️⃣     | 1️⃣      | 0️⃣      |
 
--   Thanh ghi chứa giá tri đếm của Timer2: TMR2.
--   Thanh ghi chu kỳ của Timer2(Period register): PR2.
+- Thanh ghi chứa giá tri đếm của Timer2: TMR2.
+- Thanh ghi chu kỳ của Timer2(Period register): PR2.
 
 #### [T3CON](#T3CON-1)
 
@@ -47,8 +47,8 @@ Mẫu sử dụng Timer thực tế xem [ở đây 📖](#-sử-dụng).
 | ---- | ------ | ------- | ------- | ------ | ------ | ------ | ------ |
 | 7️⃣   | 6️⃣     | 5️⃣      | 4️⃣      | 3️⃣     | 2️⃣     | 1️⃣     | 0️⃣     |
 
--   Thanh ghi chứa giá tri đếm byte thấp của Timer1: TMR1L
--   Thanh ghi chứa giá tri đếm byte cao của Timer1: TMR1H
+- Thanh ghi chứa giá tri đếm byte thấp của Timer1: TMR1L
+- Thanh ghi chứa giá tri đếm byte cao của Timer1: TMR1H
 
 ## 🚀 Sử dụng
 
@@ -56,8 +56,8 @@ Lưu ý: có vẻ như timer1 và timer3 hoạt động ở chế độ 16bit. B
 
 ### Nguồn xung
 
--   Trong: Fosc/4
--   Ngoài: TMR0: T0CKI (RA4); TMR1/3 T13CKI (RC1)
+- Trong: Fosc/4
+- Ngoài: TMR0: T0CKI (RA4); TMR1/3 T13CKI (RC1)
 
 ### Chọn hệ số chia tần
 
@@ -81,7 +81,7 @@ Biến đổi ta có `giá trị timer cần đếm cho đến khi tràn:`
 
 $$ tc = \dfrac{Fosc} {4 * K} * T $$
 
-Hoặc: 
+Hoặc:
 
 $$ tc = \dfrac{Fosc} {4 * K} * \dfrac 1 F $$
 
@@ -91,12 +91,12 @@ $$ N = 2^n - tc + 1 $$
 
 Với:
 
--   F<sub>in</sub>: tần số xung đầu vào
--   T: chu kỳ xung đầu ra (thời gian tràn timer)
--   Fosc: tần số vi xử lý
--   K: hệ số chia tần
--   N: giá trị khởi đầu (nạp vào timer)
--   tc: số giá trị timer cần đếm cho đến khi tràn
+- F<sub>in</sub>: tần số xung đầu vào
+- T: chu kỳ xung đầu ra (thời gian tràn timer)
+- Fosc: tần số vi xử lý
+- K: hệ số chia tần
+- N: giá trị khởi đầu (nạp vào timer)
+- tc: số giá trị timer cần đếm cho đến khi tràn
 
 Ví dụ: `Tính giá trị nạp vào timer để timer0 tràn trong 100ms, Fosc  4MHz.`
 
@@ -187,7 +187,8 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
     WriteTimer1(65536 - tc);
 }
 ```
-### Mẫu Timer 
+
+### Mẫu Timer
 
 ```c
 #include <p18f4520.h>
@@ -198,25 +199,25 @@ Dưới đây là TIMER1 chỉ mang tính tham khảo vui lòng tra [tài liệu
 
 void main()
 {
-	TRISE = 0b01;
-	ADCON1 = 0x0F;
-	
-	while (1)
-	{
+ TRISE = 0b01;
+ ADCON1 = 0x0F;
+ 
+ while (1)
+ {
         // Đặt giá trị ban đầu
         TMR1H = (65536 - 2000) / 256;
         TMR1L = (65536 - 2000) % 256;
         // Bật timer1
-	    T1CON = 0b00000001;
+     T1CON = 0b00000001;
         // Đợi cho đến khi timer1 tràn
         while (PIR1bits.TMR1IF == 0)
             ;
         // Tắt timer1
-	    T1CON = 0b00000000;
+     T1CON = 0b00000000;
         // Code tràn timer ở đây
         // Xoá cờ tràn
         PIR1bits.TMR1IF = 0;
-	}
+ }
 }
 ```
 
@@ -232,12 +233,12 @@ void main()
 
 void main()
 {
-	TRISE = 0b01;
-	ADCON1 = 0x0F;
+ TRISE = 0b01;
+ ADCON1 = 0x0F;
     //Timer1 on, internal clock source, 1:1 prescaler
-	OpenTimer1(TIMER_INT_OFF & T1_PS_1_1 & T1_SOURCE_INT);
-	while (1)
-	{
+ OpenTimer1(TIMER_INT_OFF & T1_PS_1_1 & T1_SOURCE_INT);
+ while (1)
+ {
 
         // Đặt giá trị ban đầu
         WriteTimer1(65536 - 2000);  // 250Hz
@@ -247,6 +248,6 @@ void main()
         // Code tràn timer ở đây
         // Xoá cờ tràn
         PIR1bits.TMR1IF = 0;
-	}
+ }
 }
 ```
