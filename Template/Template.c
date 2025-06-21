@@ -1,5 +1,5 @@
 #include <p18f4520.h>
-// #include <delays.h>
+#include <delays.h>
 // #include <timers.h>
 // #include <pwm.h>
 // #include <usart.h>
@@ -16,11 +16,12 @@
 
 void main(void)
 {
-    ADCON1 = 0x0f;
-    
-    while (1)
-    {
+	ADCON1 = 0x0f;
+	TRISB = 0;
 
-    }
+	while (1)
+	{
+		PORTBbits.RB2 = !PORTBbits.RB2;
+		Delay10KTCYx(20);
+	}
 }
-
