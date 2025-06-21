@@ -23,6 +23,7 @@ void ngat_ngoai(void)
 	{
 		INTCONbits.INT0IF = 0;
 		n++;
+		n = n & 0b00000111;
 		PORTA = PORTA & 0b00001000;
 		PORTA = n | PORTA;
 	}
