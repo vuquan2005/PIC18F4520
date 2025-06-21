@@ -23,14 +23,18 @@ void ngat_ngoai(void)
 	if (INTCONbits.INT0IF == 1)
 	{
 		INTCONbits.INT0IF = 0;
-		led = led | 0b00001000;
-		PORTB = led;
+		// led = led | 0b00001000;
+		// PORTB = led;
+		led = 1;
+		PORTB = PORTB | 0b00001000;
 	}
 	else
 	{
 		INTCON3bits.INT2IF = 0;
-		led = led & 0b11110000;
-		PORTB = led;
+		// led = led & 0b11110000;
+		// PORTB = led;
+		led = 0;
+		PORTB = PORTB & 0b11110000;
 	}
 }
 
@@ -51,24 +55,28 @@ void main()
 
 	while (1)
 	{
-		led = led | 0b10000000;
-		led = led & 0b10001000; // Giu lai gia tri cho bit 10001000
-		PORTB = led;
-		Delay10KTCYx(50);
+		// led = led | 0b10000000;
+		// led = led & 0b10001000; // Giu lai gia tri cho bit 10001000
+		// PORTB = led;
+		PORTB = (0b11110000 | (led << 3)) & 0b10001000;
+		Delay10KTCYx(100);
 
-		led = led | 0b01000000;
-		led = led & 0b01001000;
-		PORTB = led;
-		Delay10KTCYx(50);
+		// led = led | 0b01000000;
+		// led = led & 0b01001000;
+		// PORTB = led;
+		PORTB = (0b11110000 | (led << 3)) & 0b01001000;
+		Delay10KTCYx(100);
 
-		led = led | 0b00100000;
-		led = led & 0b00101000;
-		PORTB = led;
-		Delay10KTCYx(50);
+		// led = led | 0b00100000;
+		// led = led & 0b00101000;
+		// PORTB = led;
+		PORTB = (0b11110000 | (led << 3)) & 0b00101000;
+		Delay10KTCYx(100);
 
-		led = led | 0b00010000;
-		led = led & 0b00011000;
-		PORTB = led;
-		Delay10KTCYx(50);
+		// led = led | 0b00010000;
+		// led = led & 0b00011000;
+		// PORTB = led;
+		PORTB = (0b11110000 | (led << 3)) & 0b00011000;
+		Delay10KTCYx(100);
 	}
 }
