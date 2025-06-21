@@ -3,7 +3,6 @@
 *.map
 *.lst
 *.cod
-*.cof
 *.workspace
 *.pdsbak
 *.mcs
