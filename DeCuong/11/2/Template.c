@@ -11,7 +11,7 @@
 #pragma config LVP = OFF
 
 // char txt[] = {'S', 'T', 'A', 'R', 'T'};
-char txt[] = "START";
+// char txt[] = "START";
 
 void main(void)
 {
@@ -23,7 +23,8 @@ void main(void)
 	OpenUSART(USART_TX_INT_OFF & USART_RX_INT_OFF & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_CONT_RX & USART_BRGH_HIGH,
 			  71);
 
-	putsUSART(txt);
+	// putsUSART(txt);
+	putrsUSART("START");
 
 	while (1)
 	{
