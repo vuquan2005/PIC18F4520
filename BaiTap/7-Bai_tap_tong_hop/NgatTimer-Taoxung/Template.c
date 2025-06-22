@@ -20,7 +20,7 @@ void ngat_ngoai(void)
     if (INTCONbits.TMR0IF == 1)
     {
         INTCONbits.TMR0IF = 0;
-        T0CONbits.TMR0ON = 1;
+        T0CONbits.TMR0ON = 0;
 
         PORTDbits.RD0 = ~PORTDbits.RD0;
         TMR0H = 3037 / 255;
